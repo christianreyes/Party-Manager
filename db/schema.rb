@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210051021) do
+ActiveRecord::Schema.define(:version => 20110210051344) do
+
+  create_table "cohost_invitations", :force => true do |t|
+    t.integer  "party_id"
+    t.integer  "user_id"
+    t.string   "invite_name"
+    t.string   "invite_email"
+    t.string   "invite_code"
+    t.boolean  "agree"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gifts", :force => true do |t|
     t.integer  "guest_invitation_id"

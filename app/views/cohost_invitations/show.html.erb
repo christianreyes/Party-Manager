@@ -1,0 +1,36 @@
+<% title "Cohost Invitation" %>
+
+<p>
+  <strong>Id:</strong>
+  <%= @cohost_invitation.id %>
+</p>
+<p>
+  <strong>Party:</strong>
+  <%= @cohost_invitation.party_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @cohost_invitation.user_id %>
+</p>
+<p>
+  <strong>Invite Name:</strong>
+  <%= @cohost_invitation.invite_name %>
+</p>
+<p>
+  <strong>Invite Email:</strong>
+  <%= @cohost_invitation.invite_email %>
+</p>
+<p>
+  <strong>Invite Code:</strong>
+  <%= @cohost_invitation.invite_code %>
+</p>
+<p>
+  <strong>Agree:</strong>
+  <%= @cohost_invitation.agree %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_cohost_invitation_path(@cohost_invitation) %> |
+  <%= link_to "Destroy", @cohost_invitation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", cohost_invitations_path %>
+</p>
