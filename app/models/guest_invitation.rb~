@@ -3,7 +3,6 @@ class GuestInvitation < ActiveRecord::Base
     
     belongs_to :party
     belongs_to :guest
-    belongs_to :user
     
     has_many :gifts
     
