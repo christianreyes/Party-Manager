@@ -1,4 +1,6 @@
 PartyManager::Application.routes.draw do
+  resources :guest_invitations
+
   resources :locations
 
   resources :party_types

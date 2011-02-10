@@ -1,0 +1,29 @@
+<% title "Guest Invitations" %>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Party</th>
+    <th>Guest</th>
+    <th>Invited By</th>
+    <th>Invite Code</th>
+    <th>Expected Attendees</th>
+    <th>Actual Attendees</th>
+  </tr>
+  <% for guest_invitation in @guest_invitations %>
+    <tr>
+      <td><%= guest_invitation.id %></td>
+      <td><%= guest_invitation.party_id %></td>
+      <td><%= guest_invitation.guest_id %></td>
+      <td><%= guest_invitation.invited_by %></td>
+      <td><%= guest_invitation.invite_code %></td>
+      <td><%= guest_invitation.expected_attendees %></td>
+      <td><%= guest_invitation.actual_attendees %></td>
+      <td><%= link_to "Show", guest_invitation %></td>
+      <td><%= link_to "Edit", edit_guest_invitation_path(guest_invitation) %></td>
+      <td><%= link_to "Destroy", guest_invitation, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Guest Invitation", new_guest_invitation_path(guest_invitation) %></p>
