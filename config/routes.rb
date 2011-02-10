@@ -1,4 +1,6 @@
 PartyManager::Application.routes.draw do
+  resources :party_types
+
   resources :parties
 
   # The priority is based upon order of creation:
