@@ -1,4 +1,6 @@
 PartyManager::Application.routes.draw do
+  resources :gifts
+
   resources :guests
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user

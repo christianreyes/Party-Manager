@@ -1,0 +1,11 @@
+one:
+  id: 1
+  guest_invitation_id: 1
+  description: MyText
+  note_sent_on: 2011-02-10
+
+two:
+  id: 1
+  guest_invitation_id: 1
+  description: MyText
+  note_sent_on: 2011-02-10

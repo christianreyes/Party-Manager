@@ -1,0 +1,24 @@
+<% title "Gift" %>
+
+<p>
+  <strong>Id:</strong>
+  <%= @gift.id %>
+</p>
+<p>
+  <strong>Guest Invitation:</strong>
+  <%= @gift.guest_invitation_id %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @gift.description %>
+</p>
+<p>
+  <strong>Note Sent On:</strong>
+  <%= @gift.note_sent_on %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_gift_path(@gift) %> |
+  <%= link_to "Destroy", @gift, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", gifts_path %>
+</p>
