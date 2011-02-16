@@ -5,7 +5,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Location, Guest, Party].each(&:delete_all)
+    [Location, Guest, Party, PartyType].each(&:delete_all)
     
     Location.populate 20 do |loc|
       loc.name          = Faker::Name.name
@@ -18,6 +18,9 @@ namespace :db do
       loc.longitude     = rand() * 90
     end    
     
+    b = PartyType.new
+    b.name = "Birthday Party"
+    b.save! 
    
   end
 end
