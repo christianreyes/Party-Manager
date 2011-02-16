@@ -3,7 +3,7 @@ class CreatePartyTypes < ActiveRecord::Migration
     create_table :party_types do |t|
       t.integer :id
       t.string :name
-      t.boolean :active
+      t.boolean :active, :default => true
       t.timestamps
     end
   end

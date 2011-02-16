@@ -23,7 +23,6 @@ class Party < ActiveRecord::Base
     # Validation
     #=====================	
 	
-    	
-	 
+    
 
 end
