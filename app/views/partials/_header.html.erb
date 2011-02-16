@@ -3,7 +3,7 @@
 	<div id="user_info">
 	   <span>
 	   <% if logged_in? %>
-	     <% if current_user.administrator %>
+	     <% if administrator?%>
 	       Admin: 
 	     <% end %>
         <%= current_user.name + " (" + current_user.email + ") | " %> 
