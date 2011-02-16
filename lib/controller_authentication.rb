@@ -27,6 +27,10 @@ module ControllerAuthentication
   def logged_in?
     current_user
   end
+  
+  def administrator?
+    current_user.administrator if logged_in?
+  end
 
   def login_required
     unless logged_in?
