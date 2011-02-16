@@ -1,29 +1,31 @@
 PartyManager::Application.routes.draw do
-  resources :cohost_invitations
-
-  resources :gifts
-
-  resources :guests
-
-  match 'user/edit' => 'users#edit', :as => :edit_current_user
-
-  match 'signup' => 'users#new', :as => :signup
-
-  match 'logout' => 'sessions#destroy', :as => :logout
-
-  match 'login' => 'sessions#new', :as => :login
-
+  
+  # Authentication
   resources :sessions
-
-  resources :users
-
+  resources :users   
+  
+  match 'signup' => 'users#new', :as => :signup
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'login' => 'sessions#new', :as => :login    
+  match 'user/edit' => 'users#edit', :as => :edit_current_user
+   
+  # Generated model routes  
+  resources :cohost_invitations
+  resources :gifts
+  resources :guests
   resources :guest_invitations
-
   resources :locations
-
   resources :party_types
-
   resources :parties
+  
+  # Semi-static page routes
+  match 'home' => 'home#index', :as => :home
+  # match 'about' => 'home#about', :as => :about
+  # match 'contact' => 'home#contact', :as => :contact
+  # match 'privacy' => 'home#privacy', :as => :privacy
+
+  # Set the root url
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
