@@ -7,10 +7,23 @@ body {
 
 #header {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   background-color: #FFFFFF;
   border: solid 1px black;
-  width: 880px;
+  width: 800px;
+  padding: 20px 40px;
+}
+
+#app {
+	font-weight: 700;
+   line-height: 1.6em;
+   font-size: 26px;
+}
+
+#user_info  {
+   display: table-cell;
+   vertical-align: middle;
+	float: right;
 }
 
 a img {
