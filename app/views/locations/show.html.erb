@@ -26,11 +26,11 @@
 </p>
 <p>
   <strong>Latitude:</strong>
-  <%= @location.latitude %>
+  <%= @location.latitude.to_s %>
 </p>
 <p>
   <strong>Longitude:</strong>
-  <%= @location.longitude %>
+  <%= @location.longitude.to_s[0..5] %>
 </p>
 <p>
   <strong>Description:</strong>

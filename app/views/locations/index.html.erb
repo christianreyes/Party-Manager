@@ -20,8 +20,8 @@
       <td><%= location.city %></td>
       <td><%= location.state %></td>
       <td><%= location.zip %></td>
-      <td><%= location.latitude %></td>
-      <td><%= location.longitude %></td>
+      <td><%= location.latitude.to_s[0..4] %></td>
+      <td><%= location.longitude.to_s[0..4] %></td>
       <td><%= location.description %></td>
       <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_location_path(location) %></td>
