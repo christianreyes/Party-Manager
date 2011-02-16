@@ -1,32 +1,4 @@
-<%= form_for @guest_invitation do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
-  <p>
-    <%= f.label :party_id %><br />
-    <%= f.text_field :party_id %>
-  </p>
-  <p>
-    <%= f.label :guest_id %><br />
-    <%= f.text_field :guest_id %>
-  </p>
-  <p>
-    <%= f.label :invited_by %><br />
-    <%= f.text_field :invited_by %>
-  </p>
-  <p>
-    <%= f.label :invite_code %><br />
-    <%= f.text_field :invite_code %>
-  </p>
-  <p>
-    <%= f.label :expected_attendees %><br />
-    <%= f.text_field :expected_attendees %>
-  </p>
-  <p>
-    <%= f.label :actual_attendees %><br />
-    <%= f.text_field :actual_attendees %>
-  </p>
-  <p><%= f.submit %></p>
+<%= semantic_form_for(@guest_invitation) do |f| %>
+  <%= f.inputs %>
+  <%= f.buttons %>  
 <% end %>

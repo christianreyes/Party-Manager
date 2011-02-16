@@ -1,20 +1,4 @@
-<%= form_for @gift do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
-  <p>
-    <%= f.label :guest_invitation_id %><br />
-    <%= f.text_field :guest_invitation_id %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :note_sent_on %><br />
-    <%= f.date_select :note_sent_on %>
-  </p>
-  <p><%= f.submit %></p>
+<%= semantic_form_for(@gift) do |f| %>
+  <%= f.inputs %>
+  <%= f.buttons %>  
 <% end %>
