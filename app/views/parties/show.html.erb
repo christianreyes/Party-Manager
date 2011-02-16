@@ -18,7 +18,7 @@
 </p>
 <p>
   <strong>Party Type:</strong>
-  <%= @party.party_type_id %>
+  <%= @party_type.name %>
 </p>
 <p>
   <strong>Date:</strong>
@@ -26,11 +26,11 @@
 </p>
 <p>
   <strong>Start Time:</strong>
-  <%= @party.start_time %>
+  <%= time(@party.start_time) %>
 </p>
 <p>
   <strong>End Time:</strong>
-  <%= @party.end_time %>
+  <%= time(@party.end_time) %>
 </p>
 <p>
   <strong>Rsvp Date:</strong>

@@ -19,4 +19,8 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+  
+  def time(arg)
+    arg.strftime("%I:%M%P")
+  end
 end

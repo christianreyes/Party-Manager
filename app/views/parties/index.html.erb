@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Host</th>
     <th>Details</th>
@@ -17,14 +16,13 @@
   </tr>
   <% for party in @parties %>
     <tr>
-      <td><%= party.id %></td>
       <td><%= party.name %></td>
       <td><%= party.user_id %></td>
       <td><%= party.details %></td>
       <td><%= party.party_type_id %></td>
       <td><%= party.date %></td>
-      <td><%= party.start_time %></td>
-      <td><%= party.end_time %></td>
+      <td><%= time(party.start_time) %></td>
+      <td><%= time(party.end_time) %></td>
       <td><%= party.rsvp_date %></td>
       <td><%= party.location_id %></td>
       <td><%= party.public_party %></td>

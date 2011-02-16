@@ -1,20 +1,22 @@
 class PartiesController < ApplicationController
   before_filter :login_required
   def index
-    @parties = Party.all
+    # @parties = Party.all
+    @parties = current_user.parties
   end
 
   def show
     @party = Party.find(params[:id])
+    @party_type = @party.party_type
   end
 
   def new
     @party = Party.new
-    @party.user_id = session[:user_id]
   end
 
   def create
     @party = Party.new(params[:party])
+    @party.user_id = session[:user_id]
     if @party.save
       flash[:notice] = "Successfully created party."
       redirect_to @party
