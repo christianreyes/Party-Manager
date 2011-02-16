@@ -6,4 +6,4 @@
 
 <p>The side navigation bar should help you navigate the application at the moment</p>
 
-<p>You accessed this page at <b> <%= Time.now.strftime("%I:%M%P") %> </b> from <b> <%= @ip %> </b> </p>
+<p>You accessed this page at <b> <%= Time.zone.now.strftime("%I:%M%P") %> </b> from <b> <%= @ip %> </b> </p>
