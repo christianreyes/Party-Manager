@@ -3,4 +3,5 @@
 
 $(function() {
 	$("#party_date").datepicker();
+	$("#party_rsvp_date").datepicker();
 });
