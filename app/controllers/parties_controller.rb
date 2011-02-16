@@ -10,6 +10,7 @@ class PartiesController < ApplicationController
 
   def new
     @party = Party.new
+    @party.user_id = session[:user_id]
   end
 
   def create

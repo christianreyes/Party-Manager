@@ -1,9 +1,9 @@
 <div id="menu">
 	<ul>
-		<li><%= link_to 'Guests', guests_path %></li>
 		<li><%= link_to 'Parties', parties_path %></li>
-		<li><%= link_to 'Locations', locations_path %></li>
 		<% if administrator?%>
+		  <li><%= link_to 'Locations', locations_path %></li>
+		  <li><%= link_to 'Guests', guests_path %></li>
 		  <li><%= link_to 'Users', users_path %></li>
 		<% end %>
 	</ul>

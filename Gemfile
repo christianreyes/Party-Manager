@@ -6,6 +6,7 @@ gem 'will_paginate'
 gem 'formtastic'
 gem 'populator'
 gem 'faker'
+gem 'jquery-rails', '>= 0.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
