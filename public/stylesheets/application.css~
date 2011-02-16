@@ -5,6 +5,14 @@ body {
   color: #272F32;
 }
 
+#header {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: solid 1px black;
+  width: 880px;
+}
+
 a img {
   border: none;
 }
@@ -19,14 +27,62 @@ a {
   overflow: hidden;
 }
 
+
 #container {
-  width: 75%;
+  /*width: 75%;*/
+  display: block;
+  width: 800px;
   margin: 0 auto;
   background-color: #FFFFFF;
-  padding: 20px 40px;
+  padding: 0px 40px;
   border: solid 1px black;
-  margin-top: 20px;
 }
+
+/*Menu code*/
+
+#menu 
+{
+   text-align: center;
+	width: 880px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	background: #000000;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	width: 156px;
+	height: 25px;
+	padding-top: 5px;
+	border-right: 1px solid #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-family: Ariel, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	background: #2C2C2C;
+	text-decoration: none;
+}
+
+/*Flash notices*/
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
