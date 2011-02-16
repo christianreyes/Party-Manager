@@ -21,6 +21,14 @@ namespace :db do
     b = PartyType.new
     b.name = "Birthday Party"
     b.save! 
+    
+    b = PartyType.new
+    b.name = "Wedding Celebration"
+    b.save!     
+    
+    b = PartyType.new
+    b.name = "New Year's Party"
+    b.save! 
    
   end
 end
