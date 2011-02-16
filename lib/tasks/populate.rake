@@ -32,8 +32,8 @@ namespace :db do
     
     a = User.new
     a.name = "Administrator"
-    a.email = "admin@partymanager.com"
-    a.password = "admin"
+    a.email = "admin@pm.com"
+    a.password = "party"
     a.administrator = true
     a.save!
    
