@@ -4,4 +4,6 @@ class Location < ActiveRecord::Base
     has_many :parties
     has_many :guests
     has_many :users
+    
+    validates_presence_of :name, :latitude, :longitude
 end
