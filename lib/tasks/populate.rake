@@ -7,7 +7,7 @@ namespace :db do
     
     [Location, User, Guest, Party, PartyType].each(&:delete_all)
     
-    Location.populate 20 do |loc|
+    Location.populate 5 do |loc|
       loc.name          = Faker::Company.name
       loc.street        = Faker::Address.street_address
       loc.city          = Faker::Address.city
@@ -30,11 +30,12 @@ namespace :db do
     b.name = "New Year's Party"
     b.save! 
     
-    u = User.new
-    u.name = "Party Paul"
-    u.email = "party_paul@gmail.com"
-    u.password = "party"
-    u.save!
+    a = User.new
+    a.name = "Administrator"
+    a.email = "admin@partymanager.com"
+    a.password = "admin"
+    a.administrator = true
+    a.save!
    
   end
 end

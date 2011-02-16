@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :administrator, :password, :password_confirmation
 
   #has_many :parties
   has_many :cohost_invitations
@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
   before_save :prepare_password
+  
+  scope :all, :order => "name"
   
   validates_uniqueness_of :email
   #validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@"
