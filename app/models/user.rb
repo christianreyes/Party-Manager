@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
   before_save :prepare_password
-
   
   validates_uniqueness_of :email
   #validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@"
