@@ -30,12 +30,22 @@ namespace :db do
     b.name = "New Year's Party"
     b.save! 
     
+    b = PartyType.new
+    b.name = "General Party"
+    b.save!
+    
     a = User.new
     a.name = "Administrator"
     a.email = "admin@pm.com"
     a.password = "party"
     a.administrator = true
     a.save!
+    
+    c = User.new
+    c.name = "Christian Reyes"
+    c.email = "christian@pm.com"
+    c.password = "party"
+    c.save!
    
   end
 end
