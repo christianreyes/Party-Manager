@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Party Manager: " + controller.controller_name.capitalize %></title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
-    <%= stylesheet_link_tag "application", "formtastic", "formtastic_changes", "jquery-ui", :cache => "application" %>
+    <%= stylesheet_link_tag "application", "formtastic", "formtastic_changes", "jquery-ui"%>
     <%= javascript_include_tag :defaults, "jquery-ui.min" , :cache => "application"%>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
