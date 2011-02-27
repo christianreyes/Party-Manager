@@ -30,6 +30,10 @@ body {
   line-height: 110%;
 }
 
+.gmap_party {
+  float: right;
+}
+
 a img {
   border: none;
 }
