@@ -8,6 +8,7 @@ gem 'populator'
 gem 'faker'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'formtastic_datepicker_inputs'
+gem 'heroku'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
