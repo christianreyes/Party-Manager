@@ -3,10 +3,10 @@
     <%= f.input :name %>
     <%= f.input :party_type, :as => :select, :collection => PartyType.find(:all) %>
     <%= f.input :details %>
-    <%= f.input :date , :as => :string%>
+    <%= f.input :date%>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-    <%= f.input :rsvp_date , :as => :string%>
+    <%= f.input :rsvp_date%>
     <%= f.input :public_party %>
     <%= f.input :public_guestlist %>
   <% end %>

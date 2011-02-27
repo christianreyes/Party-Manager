@@ -26,6 +26,10 @@ body {
 	float: right;
 }
 
+#party_info {
+  line-height: 110%;
+}
+
 a img {
   border: none;
 }

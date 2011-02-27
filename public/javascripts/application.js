@@ -2,6 +2,5 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(function() {
-	$("#party_date").datepicker();
-	$("#party_rsvp_date").datepicker();
+	$('input.ui-date-picker').datepicker();
 });

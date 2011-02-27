@@ -7,11 +7,11 @@ class Party < ActiveRecord::Base
     #=====================
     
     has_many :guest_invitations
-	 has_many :guests, :through => :guest_invitations	
+    has_many :guests, :through => :guest_invitations	
 	
-	 belongs_to :party_type
-	 belongs_to :location
-	 belongs_to :user
+	belongs_to :party_type
+	belongs_to :location
+	belongs_to :user
  
     #=====================
     # Scopes

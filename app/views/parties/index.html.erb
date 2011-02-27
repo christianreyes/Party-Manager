@@ -1,37 +1,19 @@
 <% title "Parties" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Host</th>
-    <th>Details</th>
-    <th>Party Type</th>
-    <th>Date</th>
-    <th>Start Time</th>
-    <th>End Time</th>
-    <th>Rsvp Date</th>
-    <th>Location</th>
-    <th>Public Party</th>
-    <th>Public Guestlist</th>
-  </tr>
-  <% for party in @parties %>
-    <tr>
-      <td><%= party.name %></td>
-      <td><%= party.user_id %></td>
-      <td><%= party.details %></td>
-      <td><%= party.party_type_id %></td>
-      <td><%= party.date %></td>
-      <td><%= time(party.start_time) %></td>
-      <td><%= time(party.end_time) %></td>
-      <td><%= party.rsvp_date %></td>
-      <td><%= party.location_id %></td>
-      <td><%= party.public_party %></td>
-      <td><%= party.public_guestlist %></td>
-      <td><%= link_to "Show", party %></td>
-      <td><%= link_to "Edit", edit_party_path(party) %></td>
-      <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+<%if @parties %>
+<h3>Upcoming Parties:</h3>
+
+<% for party in @parties %>
+  <div class="party_info">
+	<%= link_to party.name, party %> &nbsp <%= party.date %> &nbsp <%= time(party.start_time) %>-<%= time(party.end_time) %> <br/>
+  <p><%if party.location%>
+	   <%= party.location.name %>
+     <%end%>
+     &nbsp
+  Number of guests invited: party.guests_invited</p>
+  </div>	
+  	
   <% end %>
-</table>
+<%end%>
 
 <p><%= link_to "New Party", new_party_path(party) %></p>
