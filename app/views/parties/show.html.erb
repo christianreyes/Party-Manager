@@ -1,5 +1,8 @@
 <% title "Party" %>
-<%= image_tag "gmap.png",:size => "400x325", :alt => 'Map to Party' ,:class => "gmap_party"%>
+<div id="map_info">
+  <%= image_tag "gmap.png",:size => "400x325", :alt => 'Map to Party'%> <br />
+  <%= @party.location.address%>
+</div>
 <p>
   <strong>Name:</strong>
   <%= @party.name %>
@@ -13,9 +16,6 @@
   		<strong>Location:</strong>
   		<%= @party.location.name %>
 	</p>
-	<p>
-		<strong>Address:</strong>
-		<%= @party.location%>
 <% end %>
 <p>
   <strong>Details:</strong>
@@ -37,14 +37,16 @@
   <strong>Rsvp Date:</strong>
   <%= @party.rsvp_date %>
 </p>
-<p>
-  <strong>Public Party:</strong>
-  <%= @party.public_party %>
-</p>
-<p>
-  <strong>Public Guestlist:</strong>
-  <%= @party.public_guestlist %>
-</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h3>Guests</h3>
+
+
 <p>
   <%= link_to "Edit", edit_party_path(@party) %> |
   <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |

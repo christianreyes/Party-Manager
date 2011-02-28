@@ -3,12 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'will_paginate'
-gem 'formtastic'
-gem 'populator'
-gem 'faker'
 gem 'jquery-rails', '>= 0.2.6'
+gem 'formtastic'
 gem 'formtastic_datepicker_inputs'
 gem 'heroku'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,6 +35,8 @@ group :development, :test do
   #gem 'webrat'
   gem "rails-erd"
   gem 'nifty-generators'
+  gem 'populator'
+  gem 'faker'
 end
 gem "mocha", :group => :test
 gem "bcrypt-ruby", :require => "bcrypt"

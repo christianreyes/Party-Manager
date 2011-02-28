@@ -30,7 +30,9 @@ body {
   line-height: 110%;
 }
 
-.gmap_party {
+#map_info{
+  display: inline;
+  text-align: center;
   float: right;
 }
 
