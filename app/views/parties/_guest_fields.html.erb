@@ -1,0 +1,9 @@
+<div class="fields">  
+  <%= semantic_form_for(@guest) do |f| %>
+    <%= f.inputs do %>
+  	  <%= f.input :name %> &nbsp <%= link_to_remove_fields "remove", f %><br />
+  	  <%= f.input :email %>
+  	  <%= f.input :notes %>
+    <% end %> 
+  <% end %>   
+</div>
