@@ -9,6 +9,8 @@ class Party < ActiveRecord::Base
     has_many :guest_invitations
     has_many :guests, :through => :guest_invitations	
 	
+	accepts_nested_attributes_for :guests, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+	
 	belongs_to :party_type
 	belongs_to :location
 	belongs_to :user

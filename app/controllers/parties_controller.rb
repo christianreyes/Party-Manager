@@ -8,6 +8,8 @@ class PartiesController < ApplicationController
     @party = Party.find(params[:id])
     @party_type = @party.party_type
     @guests = @party.guests
+    @invitations = @party.guest_invitations
+    #5.times { guests_to_add = @party.guests.build }
   end
 
   def new

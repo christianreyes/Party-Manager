@@ -45,7 +45,26 @@
 <br />
 
 <h3>Guests</h3>
-
+<% if @guests %>
+  <table class="guest_table">
+  	<tr>
+  		<th>Name</th>
+  		<th>Email</th>
+  		<th>Status</th>
+  		<th>Expected Attendees</th>
+  		<th>Actual Attendees</th>
+  	</tr>
+  	<% for invite in @invitations %>
+    <tr>
+    	<td><%= invite.guest.name %>        </td>
+    	<td><%= invite.guest.email %>       </td>
+    	<td>    Pending...                  </td>
+    	<td><%= invite.expected_attendees %></td>
+    	<td><%= invite.actual_attendees %>  </td>
+    </tr>
+  	<% end%>
+  </table>
+<% end%>
 
 <p>
   <%= link_to "Edit", edit_party_path(@party) %> |
