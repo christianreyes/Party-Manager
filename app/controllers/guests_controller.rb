@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-  	params[:guest][:user] = current_user
+  	params[:guest][:user_id] = current_user.id
     @guest = Guest.new(params[:guest])
     if @guest.save
       flash[:notice] = "Successfully created guest."
