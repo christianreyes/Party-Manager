@@ -1,4 +1,9 @@
 <%= semantic_form_for(@guest_invitation) do |f| %>
-  <%= f.inputs %>
+  <%= f.inputs do %>
+    <%= f.input :party, :as => :select, :collection => current_user.parties %>
+  	<%= f.input :guest, :as => :select, :collection => Guest.all %>
+    <%= f.input :expected_attendees %>
+    <%= f.input :actual_attendees %>
+    <% end %>
   <%= f.buttons %>  
 <% end %>

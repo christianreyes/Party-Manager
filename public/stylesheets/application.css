@@ -1,7 +1,7 @@
 body {
   background-color: #303333;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  font-family: "Lucida Grande", Sans-Serif;
+  
   color: #272F32;
 }
 
@@ -24,11 +24,6 @@ body {
    display: table-cell;
    vertical-align: middle;
 	float: right;
-}
-
-.guest_table {
-	
-	width: 100%
 }
 
 #party_info {
@@ -64,6 +59,54 @@ a {
   background-color: #FFFFFF;
   padding: 0px 40px;
   border: solid 1px black;
+}
+
+.horizontal_title {
+	margin: 20px 0px 20px;
+	padding: 10px 8px;
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.horizontal_title span {
+	font-weight: normal;
+}
+
+/* -----  Tables  ---- 
+	Inspired/modified: http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
+*/
+
+.minimal_table
+{
+	/*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	 font-size: 12px; */
+	background: #fff; 
+	/* margin: 45px; */
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.minimal_table th
+{
+	/*
+	font-size: 14px;
+	font-weight: normal;
+	 color: #039;
+	 */
+	padding: 10px 8px;
+	border-bottom: 2px solid black;
+}
+.minimal_table td
+{
+	padding: 9px 8px 0px 8px;
+}
+
+.minimal_table tbody tr:hover td
+{
+	color: #009;
 }
 
 /*Menu code*/

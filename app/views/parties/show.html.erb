@@ -1,4 +1,12 @@
-<% title "Party" %>
+<div class="horizontal_title">
+	Party Details - 
+	<span>
+		<%= link_to "Edit", edit_party_path(@party) %> |
+    	<%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
+    	<%= link_to "View All", parties_path %>
+    </span>
+</div>
+
 <div id="map_info">
   <%= image_tag "gmap.png",:size => "400x325", :alt => 'Map to Party'%> <br />
   <%= @party.location.address%>
@@ -40,34 +48,32 @@
 <br />
 <br />
 <br />
-<br />
-<br />
-<br />
 
-<h3>Guests</h3>
+<div class="horizontal_title">
+	<%= pluralize(@guests.length, 'Guest') %>
+</div>
+
 <% if @guests %>
-  <table class="guest_table">
-  	<tr>
-  		<th>Name</th>
-  		<th>Email</th>
-  		<th>Status</th>
-  		<th>Expected Attendees</th>
-  		<th>Actual Attendees</th>
-  	</tr>
-  	<% for invite in @invitations %>
-    <tr>
-    	<td><%= invite.guest.name %>        </td>
-    	<td><%= invite.guest.email %>       </td>
-    	<td>    Pending...                  </td>
-    	<td><%= invite.expected_attendees %></td>
-    	<td><%= invite.actual_attendees %>  </td>
-    </tr>
-  	<% end%>
+  <table class="minimal_table">
+  	<thead>
+  		<tr>
+  			<th>Name</th>
+  			<th>Email</th>
+  			<th>Status</th>
+  			<th>Expected Attendees</th>
+  			<th>Actual Attendees</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<% for invite in @invitations %>
+    	<tr>
+    		<td><%= invite.guest.name %>        </td>
+    		<td><%= invite.guest.email %>       </td>
+    		<td>    Pending...                  </td>
+    		<td><%= invite.expected_attendees %></td>
+    		<td><%= invite.actual_attendees %>  </td>
+    	</tr>
+  		<% end%>
+  	</tbody>
   </table>
 <% end%>
-
-<p>
-  <%= link_to "Edit", edit_party_path(@party) %> |
-  <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", parties_path %>
-</p>

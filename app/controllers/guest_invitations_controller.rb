@@ -12,6 +12,7 @@ class GuestInvitationsController < ApplicationController
   end
 
   def create
+  	params[:guest_invitation][:invited_by] = current_user
     @guest_invitation = GuestInvitation.new(params[:guest_invitation])
     if @guest_invitation.save
       flash[:notice] = "Successfully created guest invitation."
