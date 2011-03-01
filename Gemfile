@@ -7,6 +7,7 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'formtastic'
 gem 'formtastic_datepicker_inputs'
 gem 'heroku'
+gem 'meta_where'
 
 
 # Bundle edge Rails instead:

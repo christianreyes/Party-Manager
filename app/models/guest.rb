@@ -7,4 +7,6 @@ class Guest < ActiveRecord::Base
     
     belongs_to :location
     
+    scope :all, order(:name.asc)
+    
 end

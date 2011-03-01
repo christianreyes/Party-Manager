@@ -67,8 +67,8 @@
   	<tbody>
   		<% for invite in @invitations %>
     	<tr>
-    		<td><%= invite.guest.name %>        </td>
-    		<td><%= invite.guest.email %>       </td>
+    		<td><%= link_to invite.guest.name , guest_path(invite.guest) %> </td>
+    		<td><%= link_to invite.guest.email, guest_path(invite.guest) %> </td>
     		<td>    Pending...                  </td>
     		<td><%= invite.expected_attendees %></td>
     		<td><%= invite.actual_attendees %>  </td>
