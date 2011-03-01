@@ -7,18 +7,7 @@ namespace :db do
     
     [Location, User, Guest, Party, PartyType].each(&:delete_all)
     
-    Location.populate 5 do |loc|
-      loc.name          = Faker::Company.name
-      loc.street        = Faker::Address.street_address
-      loc.city          = Faker::Address.city
-      loc.state         = Faker::Address.us_state_abbr
-      loc.zip           = Faker::Address.zip_code
-      loc.description   = Faker::Lorem.sentence(10)
-      loc.latitude      = rand() * 90
-      loc.longitude     = rand() * 90
-    end    
-    
-    b = PartyType.new
+     b = PartyType.new
     b.name = "Birthday Party"
     b.save! 
     
@@ -46,6 +35,20 @@ namespace :db do
     c.email = "christian@pm.com"
     c.password = "party"
     c.save!
+    
+    
+    Location.populate 5 do |loc|
+      loc.name          = Faker::Company.name
+      loc.street        = Faker::Address.street_address
+      loc.city          = Faker::Address.city
+      loc.state         = Faker::Address.us_state_abbr
+      loc.zip           = Faker::Address.zip_code
+      loc.description   = Faker::Lorem.sentence(10)
+      loc.latitude      = rand() * 90
+      loc.longitude     = rand() * 90
+    end    
+    
+   
    
   end
 end
