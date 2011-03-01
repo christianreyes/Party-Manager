@@ -5,7 +5,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Location, User, Guest, Party, PartyType].each(&:delete_all)
+    [Location, User, GuestInvivations, Guest, Party, PartyType].each(&:delete_all)
     
      b = PartyType.new
     b.name = "Birthday Party"
