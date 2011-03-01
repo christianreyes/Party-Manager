@@ -9,7 +9,7 @@
 
 <div id="map_info">
   <%= image_tag "gmap.png",:size => "400x325", :alt => 'Map to Party'%> <br />
-  <%= @party.location.address%>
+  <%= @party.location.address if(@party.location) %>
 </div>
 <p>
   <strong>Name:</strong>
@@ -17,7 +17,7 @@
 </p>
 <p>
   <strong>Party Type:</strong>
-  <%= @party_type.name %>
+  <%= @party_type.name if(@party.location) %>
 </p>
 <% if @party.location%>
 	<p>

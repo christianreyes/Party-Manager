@@ -18,7 +18,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(params[:party])
-    @party.user_id = session[:user_id]
+    @party.user = current_user
     if @party.save
       flash[:notice] = "Successfully created party."
       redirect_to @party
