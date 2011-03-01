@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :parties, :through => :cohost_invitations
   has_many :parties, :source => :host_id
   has_many :guest_invitations
+  has_many :guests
   
   belongs_to :location
 

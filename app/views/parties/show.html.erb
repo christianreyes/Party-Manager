@@ -50,7 +50,10 @@
 <br />
 
 <div class="horizontal_title">
-	<%= pluralize(@guests.length, 'Guest') %>
+	<%= pluralize(@guests.length, 'Guest') %> - 
+	<span>
+		<%= link_to "Add", new_guest_path %>
+    </span>
 </div>
 
 <% if @guests %>

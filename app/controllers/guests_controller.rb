@@ -13,10 +13,11 @@ class GuestsController < ApplicationController
   end
 
   def create
+  	params[:guest][:user] = current_user
     @guest = Guest.new(params[:guest])
     if @guest.save
       flash[:notice] = "Successfully created guest."
-      redirect_to @guest
+      redirect_to guests_url
     else
       render :action => 'new'
     end

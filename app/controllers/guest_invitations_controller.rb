@@ -9,6 +9,8 @@ class GuestInvitationsController < ApplicationController
 
   def new
     @guest_invitation = GuestInvitation.new
+    @current_user_parties = current_user.parties
+    @current_user_guests = current_user.guests
   end
 
   def create

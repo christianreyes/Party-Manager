@@ -6,6 +6,7 @@ class Guest < ActiveRecord::Base
     has_many :gifts,   :through => :guest_invitations
     
     belongs_to :location
+    belongs_to :user
     
     scope :all, order(:name.asc)
     

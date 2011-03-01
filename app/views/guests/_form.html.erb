@@ -1,4 +1,8 @@
 <%= semantic_form_for(@guest) do |f| %>
-  <%= f.inputs %>
+  <%= f.inputs do %>
+  	<%= f.input :name %>
+  	<%= f.input :email %>
+  	<%= f.input :notes, :input_html => {:rows => 5} %>
+  <% end %>
   <%= f.buttons %>  
 <% end %>
