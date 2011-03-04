@@ -7,7 +7,7 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
     @party_type = @party.party_type
-    @guests = @party.guests
+    @guests = @party.guests ||= []
     @invitations = @party.guest_invitations
     #5.times { guests_to_add = @party.guests.build }
   end
@@ -17,8 +17,8 @@ class PartiesController < ApplicationController
   end
 
   def create
+  	params[:party][:user_id] = current_user.id
     @party = Party.new(params[:party])
-    @party.user = current_user
     if @party.save
       flash[:notice] = "Successfully created party."
       redirect_to @party
