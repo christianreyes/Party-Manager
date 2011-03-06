@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   has_many :parties, :source => :host_id, :dependent => :destroy
   has_many :guest_invitations, :foreign_key => "invited_by",  :dependent => :destroy
   has_many :guests, :foreign_key => "host_id", :dependent => :destroy
-  
-  belongs_to :location, :dependent => :destroy
+  has_many :locations, :foreign_key => "host_id", :dependent => :destroy
 
   attr_accessor :password
   before_save :prepare_password

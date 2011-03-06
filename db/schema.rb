@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110306023033) do
+ActiveRecord::Schema.define(:version => 20110306064047) do
 
   create_table "cohost_invitations", :force => true do |t|
     t.integer  "party_id"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20110306023033) do
   create_table "guests", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "location_id"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20110306023033) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "host_id"
   end
 
   create_table "parties", :force => true do |t|

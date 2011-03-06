@@ -1,4 +1,13 @@
 <%= semantic_form_for(@location) do |f| %>
-  <%= f.inputs %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :street %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :description %>
+  <% end %>
   <%= f.buttons %>  
 <% end %>

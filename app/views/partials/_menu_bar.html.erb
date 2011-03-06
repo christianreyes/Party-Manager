@@ -4,6 +4,6 @@
 	  	<li><%= link_to 'Guests', guests_path %></li>
 	  	<li><%= link_to 'Invitations', guest_invitations_path %></li>
 	  	<li><%= link_to 'Locations', locations_path %></li>
-	  	<li><%= link_to 'Users', users_path %></li>
+	   	<li><%= link_to 'Users', users_path if administrator?%></li>
 	</ul>
 </div>

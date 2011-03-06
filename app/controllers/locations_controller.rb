@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
   before_filter :login_required
   def index
-    @locations = Location.all
+    @locations = current_user.locations
   end
 
   def show
@@ -13,6 +13,7 @@ class LocationsController < ApplicationController
   end
 
   def create
+  	params[:location][:host_id] = current_user.id
     @location = Location.new(params[:location])
     if @location.save
       flash[:notice] = "Successfully created location."

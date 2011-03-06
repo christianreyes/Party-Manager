@@ -1,9 +1,9 @@
 class Location < ActiveRecord::Base
-    attr_accessible :id, :name, :street, :city, :state, :zip, :latitude, :longitude, :description
+    attr_accessible :id, :name, :street, :city, :state, :zip, :latitude, :longitude, :description, :host_id
     
     has_many :parties
-    has_many :guests
-    has_many :users
+
+    belongs_to :user, :class_name => "User", :foreign_key => "host_id"
     
     validates_presence_of :name
     
