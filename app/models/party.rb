@@ -7,6 +7,7 @@ class Party < ActiveRecord::Base
     #=====================
     
     has_many :guest_invitations, :dependent => :destroy
+    has_many :guests, :through => :guest_invitations, :source => :guest
 	
 	#accepts_nested_attributes_for :guest, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 	
@@ -23,13 +24,5 @@ class Party < ActiveRecord::Base
     # Validation
     #=====================	
 	
-    def guests
-    	g = []
-    	guest_invitations.each do |gi|
-    		g.insert(0,gi.guest)
-    	end
-    	
-    	return g
-    end
-
+	validates_presence_of :name, :user_id
 end

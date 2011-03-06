@@ -2,7 +2,7 @@
   <%= f.inputs do %>
     <%= f.input :name %>
     <%= f.input :party_type, :as => :select, :collection => PartyType.all %>
-    <%= f.input :location, :as => :select, :collection => Location.all %>
+    <%= f.input :location, :as => :select, :collection => current_user.locations %>
     <%= f.input :details %>
     <%= f.input :date%>
     <%= f.input :start_time %>

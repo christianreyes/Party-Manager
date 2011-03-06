@@ -7,7 +7,7 @@ namespace :db do
     
     [Location, User, GuestInvitation, Guest, Party, PartyType].each(&:delete_all)
     
-     b = PartyType.new
+    b = PartyType.new
     b.name = "Birthday Party"
     b.save! 
     
@@ -37,7 +37,23 @@ namespace :db do
     c.save!
     
     cmu = Location.new
+    cmu.user = c
     cmu.name = "Carnegie Mellon University"
+    cmu.street = "5032 Forbes Ave"
+    cmu.city = "Pittsburgh"
+    cmu.state = "PA"
+    cmu.zip = "15213"
+    cmu.save!
+    
+    home = Location.new
+    home.user = c
+    home.name = "Home"
+    home.street = "Stanbrook Dr."
+    home.city = "La Mirada"
+    home.state = "CA"
+    home.zip = "90638"
+    home.save!
+    
     #Location.populate 5 do |loc|
     #  loc.name          = Faker::Company.name
     #  loc.street        = Faker::Address.street_address
