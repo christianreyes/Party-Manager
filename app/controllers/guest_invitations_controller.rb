@@ -1,4 +1,5 @@
 class GuestInvitationsController < ApplicationController
+  before_filter :login_required
   def index
     @guest_invitations = current_user.guest_invitations
   end

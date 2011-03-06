@@ -36,7 +36,8 @@ namespace :db do
     c.password = "party"
     c.save!
     
-    
+    cmu = Location.new
+    cmu.name = "Carnegie Mellon University"
     #Location.populate 5 do |loc|
     #  loc.name          = Faker::Company.name
     #  loc.street        = Faker::Address.street_address
