@@ -37,16 +37,16 @@ namespace :db do
     c.save!
     
     
-    Location.populate 5 do |loc|
-      loc.name          = Faker::Company.name
-      loc.street        = Faker::Address.street_address
-      loc.city          = Faker::Address.city
-      loc.state         = Faker::Address.us_state_abbr
-      loc.zip           = Faker::Address.zip_code
-      loc.description   = Faker::Lorem.sentence(10)
-      loc.latitude      = rand() * 90
-      loc.longitude     = rand() * 90
-    end    
+    #Location.populate 5 do |loc|
+    #  loc.name          = Faker::Company.name
+    #  loc.street        = Faker::Address.street_address
+    #  loc.city          = Faker::Address.city
+    #  loc.state         = Faker::Address.us_state_abbr
+    #  loc.zip           = Faker::Address.zip_code
+    #  loc.description   = Faker::Lorem.sentence(10)
+    #  loc.latitude      = rand() * 90
+    #  loc.longitude     = rand() * 90
+    #end    
     
    
    

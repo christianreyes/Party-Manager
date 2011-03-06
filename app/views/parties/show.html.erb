@@ -6,11 +6,16 @@
     	<%= link_to "View All", parties_path %>
     </span>
 </div>
-
-<div id="map_info">
-  <%= image_tag "gmap.png",:size => "400x325", :alt => 'Map to Party'%> <br />
-  <%= @party.location.address if(@party.location) %>
-</div>
+<% if @party.location%>
+  <div id="map_info">
+    <%= image_tag @party.location.google_map_url("400x325"), :alt => 'Map to Party'%> <br />
+    <%= @party.location.address %>
+  </div>
+<%else%>
+  <div id="map_info">
+  	<%= image_tag "gmap_placeholder.png", :alt => 'Add a location to get a map'%> <br />
+  </div>
+<%end%>
 <p>
   <strong>Name:</strong>
   <%= @party.name %>

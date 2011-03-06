@@ -17,8 +17,16 @@
 #   before_filter :login_required, :except => [:index, :show]
 module ControllerAuthentication
   def self.included(controller)
-    controller.send :helper_method, :current_user, :logged_in?, :administrator?, :redirect_to_target_or_default
+  	#:session_expiry
+    controller.send :helper_method, :current_user, :logged_in?, :administrator?,  :redirect_to_target_or_default
   end
+  
+  #def session_expiry
+  #  reset_session if session[:expiry_time] and session[:expiry_time] < Time.now
+  #
+  #  session[:expiry_time] = 1.seconds.from_now
+  #  return true
+  #end
 
   def current_user
   	begin

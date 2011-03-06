@@ -5,7 +5,7 @@ class Location < ActiveRecord::Base
     has_many :guests
     has_many :users
     
-    validates_presence_of :name, :latitude, :longitude
+    validates_presence_of :name
     
     def address
     	str = String.new
@@ -31,5 +31,15 @@ class Location < ActiveRecord::Base
         end
         
         return str
+    end
+    
+    def google_map_url(size)
+    	string =  "http://maps.google.com/maps/api/staticmap?"
+    	string += "&zoom=14&size="
+    	string += size
+    	string += "&markers=size:mid|color:red|"
+    	string += address
+    	string += "&sensor=false"
+    	return string
     end
 end
