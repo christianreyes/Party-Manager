@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   before_filter :login_required
   def index
-    @guests = Guest.all
+    @guests = current_user.guests
   end
 
   def show
@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-  	params[:guest][:user_id] = current_user.id
+  	params[:guest][:host_id] = current_user.id
     @guest = Guest.new(params[:guest])
     if @guest.save
       flash[:notice] = "Successfully created guest."

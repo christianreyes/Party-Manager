@@ -72,7 +72,7 @@
     	<tr>
     		<td><%= link_to invite.guest.name , guest_path(invite.guest) %> </td>
     		<td><%= link_to invite.guest.email, guest_path(invite.guest) %> </td>
-    		<td>    Pending...                  </td>
+    		<td><%= link_to "Pending", guest_invitation_path(invite)      %> </td>
     		<td><%= invite.expected_attendees %></td>
     		<td><%= invite.actual_attendees %>  </td>
     	</tr>

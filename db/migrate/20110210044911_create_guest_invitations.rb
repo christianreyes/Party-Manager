@@ -5,7 +5,7 @@ class CreateGuestInvitations < ActiveRecord::Migration
       t.integer :party_id
       t.integer :guest_id
       t.integer :invited_by
-      t.string :invite_code
+      t.string  :invite_code
       t.integer :expected_attendees
       t.integer :actual_attendees
       t.timestamps

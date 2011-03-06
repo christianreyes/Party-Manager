@@ -1,6 +1,6 @@
 class GuestInvitationsController < ApplicationController
   def index
-    @guest_invitations = GuestInvitation.all
+    @guest_invitations = current_user.guest_invitations
   end
 
   def show
@@ -14,7 +14,7 @@ class GuestInvitationsController < ApplicationController
   end
 
   def create
-  	params[:guest_invitation][:invited_by] = current_user
+  	params[:guest_invitation][:invited_by] = current_user.id
     @guest_invitation = GuestInvitation.new(params[:guest_invitation])
     if @guest_invitation.save
       flash[:notice] = "Successfully created guest invitation."

@@ -3,13 +3,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :administrator, :password, :password_confirmation
 
   #has_many :parties
-  has_many :cohost_invitations
-  has_many :parties, :through => :cohost_invitations
-  has_many :parties, :source => :host_id
-  has_many :guest_invitations
-  has_many :guests
+  has_many :cohost_invitations, :dependent => :destroy
+  has_many :parties, :source => :host_id, :dependent => :destroy
+  has_many :guest_invitations, :foreign_key => "invited_by",  :dependent => :destroy
+  has_many :guests, :foreign_key => "host_id", :dependent => :destroy
   
-  belongs_to :location
+  belongs_to :location, :dependent => :destroy
 
   attr_accessor :password
   before_save :prepare_password

@@ -1,31 +1,27 @@
 <% title "Guest Invitation" %>
 
 <p>
-  <strong>Id:</strong>
-  <%= @guest_invitation.id %>
-</p>
-<p>
-  <strong>Party:</strong>
-  <%= @guest_invitation.party_id %>
+  <strong>Party:</strong
+  <%= @guest_invitation.party.name %>
 </p>
 <p>
   <strong>Guest:</strong>
-  <%= @guest_invitation.guest_id %>
+  <%= @guest_invitation.guest.name %>
 </p>
 <p>
   <strong>Invited By:</strong>
-  <%= @guest_invitation.invited_by %>
+  <%= @guest_invitation.user.name %>
 </p>
 <p>
   <strong>Invite Code:</strong>
   <%= @guest_invitation.invite_code %>
 </p>
 <p>
-  <strong>Expected Attendees:</strong>
+  <strong>Expected:</strong>
   <%= @guest_invitation.expected_attendees %>
 </p>
 <p>
-  <strong>Actual Attendees:</strong>
+  <strong>Actual:</strong>
   <%= @guest_invitation.actual_attendees %>
 </p>
 
