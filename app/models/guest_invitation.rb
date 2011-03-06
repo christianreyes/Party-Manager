@@ -9,4 +9,6 @@ class GuestInvitation < ActiveRecord::Base
     has_many :gifts, :dependent => :destroy
     #has_one :guest, :dependent => :destroy
     
+    validates_presence_of :party_id, :guest_id
+    
 end
