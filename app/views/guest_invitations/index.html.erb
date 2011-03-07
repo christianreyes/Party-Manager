@@ -11,7 +11,7 @@
   </tr>
   <% for invite in @guest_invitations %>
     <tr>
-      <td><%= link_to invite.party.name, party_path(invite.party) %>
+      <td><%= link_to invite.party.name, party_path(invite.party)  %>
       <td><%= link_to invite.guest.name, guest_path(invite.guest) %></td>
       <td><%= invite.user.name %></td>
       <td><%= invite.invite_code %></td>

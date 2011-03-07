@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def new_user(attributes = {})
-    attributes[:username] ||= 'foo'
+    #attributes[:username] ||= 'foo'
     attributes[:email] ||= 'foo@example.com'
     attributes[:password] ||= 'abc123'
     attributes[:password_confirmation] ||= attributes[:password]
@@ -19,9 +19,9 @@ class UserTest < ActiveSupport::TestCase
     assert new_user.valid?
   end
 
-  def test_require_username
-    assert new_user(:username => '').errors[:username]
-  end
+  #def test_require_username
+  #  assert new_user(:username => '').errors[:username]
+  #end
 
   def test_require_password
     assert new_user(:password => '').errors[:password]
@@ -36,14 +36,14 @@ class UserTest < ActiveSupport::TestCase
     assert new_user(:email => 'bar@example.com').errors[:email]
   end
 
-  def test_validate_uniqueness_of_username
-    new_user(:username => 'uniquename').save!
-    assert new_user(:username => 'uniquename').errors[:username]
-  end
+  #def test_validate_uniqueness_of_username
+  #  new_user(:username => 'uniquename').save!
+  #  assert new_user(:username => 'uniquename').errors[:username]
+  #end
 
-  def test_validate_odd_characters_in_username
-    assert new_user(:username => 'odd ^&(@)').errors[:username]
-  end
+  #def test_validate_odd_characters_in_username
+  #  assert new_user(:username => 'odd ^&(@)').errors[:username]
+  #end
 
   def test_validate_password_length
     assert new_user(:password => 'bad').errors[:password]
@@ -60,12 +60,12 @@ class UserTest < ActiveSupport::TestCase
     assert user.password_salt
   end
 
-  def test_authenticate_by_username
-    User.delete_all
-    user = new_user(:username => 'foobar', :password => 'secret')
-    user.save!
-    assert_equal user, User.authenticate('foobar', 'secret')
-  end
+  #def test_authenticate_by_username
+  #  User.delete_all
+  #  user = new_user(:username => 'foobar', :password => 'secret')
+  #  user.save!
+  #  assert_equal user, User.authenticate('foobar', 'secret')
+  #end
 
   def test_authenticate_by_email
     User.delete_all
@@ -74,9 +74,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal user, User.authenticate('foo@bar.com', 'secret')
   end
 
-  def test_authenticate_bad_username
-    assert_nil User.authenticate('nonexisting', 'secret')
-  end
+  #def test_authenticate_bad_username
+  #  assert_nil User.authenticate('nonexisting', 'secret')
+  #end
 
   def test_authenticate_bad_password
     User.delete_all
