@@ -1,3 +1,13 @@
+<#% if @party.party_type%>
+  <#% content_for :head do %>
+    <#style type="text/css">
+    	body {
+    		background-image: url('images/birthday_cake.jpg');
+    	}
+    <#/style>
+  <#% end %>
+<#% end %>
+
 <div class="horizontal_title">
 	Party Details - 
 	<span>
@@ -22,7 +32,7 @@
 </p>
 <p>
   <strong>Party Type:</strong>
-  <%= @party_type.name if(@party.location) %>
+  <%= @party.party_type.name if @party.party_type %>
 </p>
 <% if @party.location%>
 	<p>
