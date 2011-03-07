@@ -8,7 +8,20 @@ gem 'formtastic'
 gem 'formtastic_datepicker_inputs'
 gem 'heroku'
 gem 'meta_where'
+gem "bcrypt-ruby", :require => "bcrypt"
 
+group :development do
+  gem "rails-erd"
+  gem 'nifty-generators'
+end
+
+group :test do
+  gem "mocha"
+  gem 'populator'
+  gem 'faker'
+  gem 'shoulda'
+  gem 'factory_girl'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,12 +45,3 @@ gem 'meta_where'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
-  #gem 'webrat'
-  gem "rails-erd"
-  gem 'nifty-generators'
-  gem 'populator'
-  gem 'faker'
-end
-gem "mocha", :group => :test
-gem "bcrypt-ruby", :require => "bcrypt"

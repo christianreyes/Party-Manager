@@ -34,6 +34,7 @@ GEM
     configuration (1.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (1.3.2)
     faker (0.9.5)
       i18n (~> 0.4)
     formtastic (1.2.3)
@@ -99,6 +100,7 @@ GEM
     rest-client (1.6.1)
       mime-types (>= 1.16)
     ruby-graphviz (0.9.20)
+    shoulda (2.11.3)
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
     sqlite3-ruby (1.3.3)
@@ -115,6 +117,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  factory_girl
   faker
   formtastic
   formtastic_datepicker_inputs
@@ -126,5 +129,6 @@ DEPENDENCIES
   populator
   rails (= 3.0.3)
   rails-erd
+  shoulda
   sqlite3-ruby
   will_paginate
