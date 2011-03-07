@@ -20,7 +20,7 @@ group :test do
   gem 'populator'
   gem 'faker'
   gem 'shoulda'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 # Bundle edge Rails instead:
