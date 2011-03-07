@@ -6,6 +6,9 @@ class Location < ActiveRecord::Base
     belongs_to :user, :class_name => "User", :foreign_key => "host_id"
     
     validates_presence_of :name
+    validates_presence_of :latitude, :if => :lat_or_long_present
+    validates_presence_of :longitude, :if => :lat_or_long_present
+    validates_numericality_of :latitude, :longitude, :if => :lat_or_long_present
     
     def address
     	str = String.new
@@ -41,5 +44,11 @@ class Location < ActiveRecord::Base
     	string += address
     	string += "&sensor=false"
     	return string
+    end
+    
+    
+    
+    def lat_or_long_present
+    	return latitude != nil || longitude !=nil
     end
 end
