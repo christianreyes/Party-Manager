@@ -2,13 +2,13 @@ class PartiesController < ApplicationController
   before_filter :login_required
   
   def index
-    @parties = current_user.parties
+    @upcoming_parties = current_user.parties.upcoming
+    @past_parties = current_user.parties.past
   end
 
   def show
     @party = Party.find(params[:id])
-    @party_type = @party.party_type
-    @guests = @party.guests ||= []
+    @guests = @party.guests
     @invitations = @party.guest_invitations
     #5.times { guests_to_add = @party.guests.build }
   end

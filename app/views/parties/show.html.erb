@@ -1,3 +1,4 @@
+<!--Code for dynamic background
 <#% if @party.party_type%>
   <#% content_for :head do %>
     <#style type="text/css">
@@ -7,6 +8,7 @@
     <#/style>
   <#% end %>
 <#% end %>
+-->
 
 <div class="horizontal_title">
 	Party Details - 
@@ -71,7 +73,7 @@
     </span>
 </div>
 
-<% if @guests %>
+<% if @guests.length > 0 %>
   <table class="minimal_table">
   	<thead>
   		<tr>

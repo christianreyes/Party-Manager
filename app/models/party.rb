@@ -1,4 +1,5 @@
 class Party < ActiveRecord::Base
+    
     attr_accessible :id, :name, :user_id, :details, :party_type_id, :date, 
     					  :start_time, :end_time, :rsvp_date, :location_id, :public_party, :public_guestlist
 	
@@ -19,10 +20,13 @@ class Party < ActiveRecord::Base
     # Scopes
     #=====================
     
+    scope :all, order(:name.asc)
+    scope :upcoming, where(:date > Date.yesterday ).order(:date.desc)
+    scope :past,     where(:date <= Date.yesterday).order(:date.desc)
     
     #=====================
     # Validation
     #=====================	
 	
-	validates_presence_of :name, :user_id
+	validates_presence_of :name, :user_id, :date
 end
