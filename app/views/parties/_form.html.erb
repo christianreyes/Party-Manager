@@ -4,10 +4,10 @@
     <%= f.input :party_type, :as => :select, :collection => PartyType.all %>
     <%= f.input :location, :as => :select, :collection => current_user.locations %>
     <%= f.input :details , :input_html => {:rows => 7}%>
-    <%= f.input :date, :as => :date_picker %>
+    <%= f.input :date %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-    <%= f.input :rsvp_date, :as => :date_picker%>
+    <%= f.input :rsvp_date%>
     <%= f.input :public_party %>
     <%= f.input :public_guestlist %>
   <% end %>
