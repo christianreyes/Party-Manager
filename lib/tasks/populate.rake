@@ -20,7 +20,7 @@ namespace :db do
     b.save! 
     
     b = PartyType.new
-    b.name = "General Party"
+    b.name = "Other"
     b.save!
     
     a = User.new
