@@ -1,13 +1,14 @@
 <% title "Guest Invitations" %>
 
-<table>
+<table class="minimal_table">
   <tr>
     <th>Party</th>
     <th>Guest</th>
     <th>Invited By</th>
     <th>Invite Code</th>
-    <th>Expected Attendees</th>
-    <th>Actual Attendees</th>
+    <th>Expected</th>
+    <th>Actual</th>
+    <th colspan="3">Actions</th>
   </tr>
   <% for invite in @guest_invitations %>
     <tr>
