@@ -4,32 +4,51 @@
 	<div class="horizontal_title">
 		Upcoming Parties
 	</div>
-	<% for party in @upcoming_parties %>
-		<div class="party_info">
-			<%= link_to party.name, party %> &nbsp <%= party.date %> &nbsp <%= time(party.start_time) %>-<%= time(party.end_time) %> <br/>
-			<p><%if party.location%>
-	   				<%= party.location.name %>
-	 			<%end%>
-	 			&nbsp
-				Number of guests invited: <%= party.guests.length %></p>
-		</div>	
-	<% end %>
+	<table class="minimal_table">
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th># Expected</th>
+		</tr>
+	
+		<% for party in @upcoming_parties %>
+		<tr>
+			<td><%= link_to party.name, party %></td>
+			<td><%= party.date %> </td> 
+			<td><%= time(party.start_time) %> </td>
+			<td><%= time(party.end_time) %> </td>
+			<td><%= party.guests.length %></td>
+		</tr>
+		<% end %>
+	</table>
 <%end%>
+
+</br>
 
 <%if @past_parties.length > 0 %>
 	<div class="horizontal_title">
 		Past Parties
 	</div>
-	<% for party in @past_parties %>
-		<div class="party_info">
-			<%= link_to party.name, party %> &nbsp <%= party.date %> &nbsp <%= time(party.start_time) %>-<%= time(party.end_time) %> <br/>
-			<p><%if party.location%>
-	   				<%= party.location.name %>
-	 			<%end%>
-	 			&nbsp
-				Number of guests invited: <%= party.guests.length %></p>
-		</div>	
-	<% end %>
+	<table class="minimal_table">
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th># Expected</th>
+		</tr>
+		<% for party in @past_parties %>
+		<tr>
+			<td><%= link_to party.name, party %></td>
+			<td><%= party.date %> </td> 
+			<td><%= time(party.start_time) %> </td>
+			<td><%= time(party.end_time) %> </td>
+			<td><%= party.guests.length %></td>
+		</tr>
+		<% end %>
+	</table>
 <%end%>
 
 <p><%= link_to "New Party", new_party_path(party) %></p>

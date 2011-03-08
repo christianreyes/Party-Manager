@@ -28,5 +28,5 @@ class Party < ActiveRecord::Base
     # Validation
     #=====================	
 	
-	validates_presence_of :name, :user_id
+	validates_presence_of :name, :user_id, :date
 end

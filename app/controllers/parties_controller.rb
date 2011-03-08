@@ -20,6 +20,7 @@ class PartiesController < ApplicationController
   def create
   	params[:party][:user_id] = current_user.id
     params[:party][:date] = string_to_date(params[:party][:date])
+    params[:party][:rsvp_date] = string_to_date(params[:party][:rsvp_date])
     @party = Party.new(params[:party])
     if @party.save
       flash[:notice] = "Successfully created party."
@@ -36,6 +37,7 @@ class PartiesController < ApplicationController
   def update
     @party = Party.find(params[:id])
     params[:party][:date] = string_to_date(params[:party][:date])
+    params[:party][:rsvp_date] = string_to_date(params[:party][:rsvp_date])
     if @party.update_attributes(params[:party])
       flash[:notice] = "Successfully updated party."
       redirect_to party_url
