@@ -11,6 +11,7 @@
 			<th>Start Time</th>
 			<th>End Time</th>
 			<th># Expected</th>
+			<th># Confirmed</th>
 		</tr>
 	
 		<% for party in @upcoming_parties %>
@@ -19,7 +20,8 @@
 			<td><%= party.date %> </td> 
 			<td><%= time(party.start_time) %> </td>
 			<td><%= time(party.end_time) %> </td>
-			<td><%= party.guests.length %></td>
+			<td><%= party.number_expected_guests %></td>
+			<td><%= party.number_confirmed_guests%></td>
 		</tr>
 		<% end %>
 	</table>
@@ -38,6 +40,7 @@
 			<th>Start Time</th>
 			<th>End Time</th>
 			<th># Expected</th>
+			<th># Confirmed</th>
 		</tr>
 		<% for party in @past_parties %>
 		<tr>
@@ -45,7 +48,8 @@
 			<td><%= party.date %> </td> 
 			<td><%= time(party.start_time) %> </td>
 			<td><%= time(party.end_time) %> </td>
-			<td><%= party.guests.length %></td>
+			<td><%= party.number_expected_guests %></td>
+			<td><%= party.number_confirmed_guests%></td>
 		</tr>
 		<% end %>
 	</table>

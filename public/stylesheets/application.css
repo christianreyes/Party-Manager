@@ -150,6 +150,16 @@ a {
 	Inspired/modified: http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
 */
 
+.party_info_table{
+	vertical-align: text-top;
+	text-align: left;
+	border-spacing: 1em;
+}
+
+.party_info_table th {
+	width: 100px;
+}
+
 .minimal_table
 {
 	/*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;

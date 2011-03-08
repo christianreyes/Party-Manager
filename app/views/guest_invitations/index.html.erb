@@ -15,7 +15,7 @@
       <td><%= link_to invite.party.name, party_path(invite.party)  %>
       <td><%= link_to invite.guest.name, guest_path(invite.guest) %></td>
       <td><%= invite.user.name %></td>
-      <td><%= invite.invite_code %></td>
+      <td><%= link_to invite.invite_code, invite.invite_url %></td>
       <td><%= invite.expected_attendees %></td>
       <td><%= invite.actual_attendees %></td>
       <td><%= link_to "Show", invite %></td>

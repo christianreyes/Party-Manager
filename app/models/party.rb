@@ -1,8 +1,9 @@
+
 class Party < ActiveRecord::Base
     
     attr_accessible :id, :name, :user_id, :details, :party_type_id, :date, 
     					  :start_time, :end_time, :rsvp_date, :location_id, :public_party, :public_guestlist
-	
+		
     #=====================
     # Relationships
     #=====================
@@ -19,9 +20,9 @@ class Party < ActiveRecord::Base
     #=====================
     # Scopes
     #=====================
-    
+   
     scope :all, order(:name.asc)
-    scope :upcoming, where(:date > Date.yesterday ).order(:date.desc)
+    scope :upcoming, where(:date > Date.yesterday).order(:date.desc)
     scope :past,     where(:date <= Date.yesterday).order(:date.desc)
     
     #=====================
@@ -29,4 +30,12 @@ class Party < ActiveRecord::Base
     #=====================	
 	
 	validates_presence_of :name, :user_id, :date
+	
+	def number_expected_guests
+		return self.guests.sum('expected_attendees')
+	end
+	
+	def number_confirmed_guests
+		return self.guests.sum('actual_attendees')
+	end
 end

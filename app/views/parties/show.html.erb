@@ -21,50 +21,54 @@
 <% if @party.location%>
   <div id="map_info">
     <%= image_tag @party.location.google_map_url("400x325"), :alt => 'Map to Party'%> <br />
-    <%= @party.location.address %>
+    <%# @party.location.address 
+    %>
   </div>
 <%else%>
   <div id="map_info">
   	<%= image_tag "gmap_placeholder.png", :alt => 'Add a location to get a map'%> <br />
   </div>
 <%end%>
-<p>
-  <strong>Name:</strong>
-  <%= @party.name %>
-</p>
-<p>
-  <strong>Party Type:</strong>
-  <%= @party.party_type.name if @party.party_type %>
-</p>
-<% if @party.location%>
-	<p>
-  		<strong>Location:</strong>
-  		<%= @party.location.name %>
-	</p>
-<% end %>
-<p>
-  <strong>Details:</strong>
-  <%= @party.details %>
-</p>
-<p>
-  <strong>Date:</strong>
-  <%= @party.date %>
-</p>
-<p>
-  <strong>Start Time:</strong>
-  <%= time(@party.start_time) %>
-</p>
-<p>
-  <strong>End Time:</strong>
-  <%= time(@party.end_time) %>
-</p>
-<p>
-  <strong>Rsvp Date:</strong>
-  <%= @party.rsvp_date %>
-</p>
-<br />
-<br />
-<br />
+<table class="party_info_table">
+	<tr>
+		<th>Name:</th>
+		<td><%= @party.name %></td>
+	</tr>
+    <tr>
+    	<th>Party Type:</th>
+    	<td><%= @party.party_type.name if @party.party_type %></td>
+    </tr>
+    <tr>
+    	<th>Location:</th>
+    	<td><%= @party.location.name if @party.location%></td>
+    </tr>
+    <tr>
+    	<th>Address:</th>
+    	<td><%= @party.location.display_address.html_safe if @party.location%></td>
+    </tr>
+  	<tr>
+  		<th>Date:</th>
+  		<td><%= @party.date %></td>
+  	</tr>
+  	<tr>
+  		<th>Start Time:</th>
+  		<td><%= time(@party.start_time) %></td>
+  	</tr>
+    <tr>
+    	<th>End Time:</th>
+    	<td><%= time(@party.end_time) %></td>
+    </tr>
+    <tr>
+    	<th>Rsvp Date:</th>
+    	<td><%= @party.rsvp_date %></td>
+    </tr>
+</table>
+<table class="party_info_table"
+	<tr>
+		<th>Details:</th>
+		<td><%= @party.details %></td>
+	</tr>
+</table>
 
 <div class="horizontal_title">
 	<%= pluralize(@guests.length, 'Guest') %> - 

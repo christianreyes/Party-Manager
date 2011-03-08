@@ -25,6 +25,22 @@ class Location < ActiveRecord::Base
     	return str
     end
     
+    def display_address
+    	str = String.new
+    	str = comma_add(str, street)
+    	str += '<br/>'
+    	str = str + city if city
+    	str = comma_add(str, state)
+    	if(zip)
+    		if(str.length > 0)
+    		str+= " "
+    		end
+    		str += zip
+    	end
+    	
+    	return str
+    end
+    
     def comma_add(str, add)
     	if(add)
     		if(str.length>0)

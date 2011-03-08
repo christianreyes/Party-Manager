@@ -7,6 +7,10 @@ class GuestInvitationsController < ApplicationController
   def show
     @guest_invitation = GuestInvitation.find(params[:id])
   end
+  
+  def rsvp
+  	@guest_invitation = GuestInvitation.by_invite(params[:invite_code])
+  end
 
   def new
     @guest_invitation = GuestInvitation.new
