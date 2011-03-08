@@ -1,33 +1,111 @@
+/* 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+CSS RESET ^^ */
+
 body {
   background-color: #303333;
   font-family: "Lucida Grande", Sans-Serif; 
   color: #272F32;
+  margin: 0;
+  padding: 0;
 }
 
 #header {
+  background-color: #66B4C4;
+  border-bottom: 1px solid #000000;
+}
+
+#header_container {
   margin: 0 auto;
   text-align: left;
-  background-color: #FFFFFF;
-  border: solid 1px black;
+  /*border: solid 1px black;
+  */
+  padding: 20px 40px;
   width: 800px;
+  
+}
+
+#container {
+  /*width: 75%;*/
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
   padding: 20px 40px;
 }
 
 #footer {
-  margin: 20px 0px 10px;
+  border-top: 1px solid #000000;
+  margin: 0px auto;
   text-align: center;
+  background-color: #FFDF87;
+  line-height: 40px;
+  width: 880px;
+  height: 40px;
+  -moz-border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
 }
 
-#app {
-	font-weight: 700;
+#footer span{
+  margin: 20px auto 20px;
+}
+
+#header_container .app {
+   font-weight: 700;
    line-height: 1.6em;
    font-size: 26px;
 }
 
-#user_info  {
-   display: table-cell;
+#header_container table{
+   width: 100%;
    vertical-align: middle;
-	float: right;
+}
+
+#header_container .user_info {
+   text-align: right;
 }
 
 #party_info {
@@ -54,18 +132,8 @@ a {
   overflow: hidden;
 }
 
-
-#container {
-  /*width: 75%;*/
-  display: block;
-  width: 800px;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-}
-
 .horizontal_title {
+	background-color: #FFDF87;
 	margin: 20px 0px 20px;
 	padding: 10px 8px;
 	text-align: center;
@@ -120,13 +188,14 @@ a {
 
 #menu 
 {
-	border: solid 1px black;
+	-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     text-align: center;
 	width: 880px;
 	height: 30px;
 	margin: 0 auto;
 	padding: 0;
-	background: #000000;
+	background: #303333;
 }
 
 #menu ul {
@@ -157,6 +226,8 @@ a {
 }
 
 #menu a:hover, #menu .current_page_item a {
+	-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
 	background: #2C2C2C;
 	text-decoration: none;
 }
