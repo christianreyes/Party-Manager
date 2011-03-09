@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      PartyMailer.registration_confirmation(@user).deliver  
       session[:user_id] = @user.id
       flash[:notice] = "Thank you for signing up! You are now logged in."
       redirect_to "/"

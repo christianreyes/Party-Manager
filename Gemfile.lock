@@ -126,6 +126,7 @@ DEPENDENCIES
   formtastic_datepicker_inputs
   heroku
   jquery-rails (>= 0.2.6)
+  mail
   meta_where
   mocha
   nifty-generators
