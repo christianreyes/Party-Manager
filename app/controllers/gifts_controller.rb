@@ -9,6 +9,8 @@ class GiftsController < ApplicationController
 
   def new
     @gift = Gift.new
+    @invitations = current_user.guest_invitations
+    @invitations. each { |invitation| (@invite_hash ||= {})["#{invitation.party.name} | #{invitation.guest.name}"] = invitation.id }
   end
 
   def create

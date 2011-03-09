@@ -13,4 +13,5 @@ module ApplicationHelper
 		str += "===========================================</p>"
 		return str
 	end
+	
 end
