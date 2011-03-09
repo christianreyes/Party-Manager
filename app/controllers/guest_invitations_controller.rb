@@ -9,7 +9,7 @@ class GuestInvitationsController < ApplicationController
   end
   
   def rsvp
-  	@guest_invitation = GuestInvitation.by_invite(params[:invite_code])
+  	@guest_invitation = GuestInvitation.by_invite(params[:invite_code]).first
   end
 
   def new
@@ -22,8 +22,9 @@ class GuestInvitationsController < ApplicationController
   	params[:guest_invitation][:invited_by] = current_user.id
     @guest_invitation = GuestInvitation.new(params[:guest_invitation])
     if @guest_invitation.save
-      flash[:notice] = "Successfully created guest invitation."
+      flash[:notice] = "Successfully created and emailed guest invitation."
       redirect_to @guest_invitation
+      PartyMailer.email_invitation(@guest_invitation).deliver  
     else
       render :action => 'new'
     end

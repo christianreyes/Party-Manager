@@ -15,7 +15,7 @@ class GuestInvitation < ActiveRecord::Base
     validates_presence_of :party_id, :guest_id
    
     def invite_url
-    	return "/invite/" + invite_code
+    	return "/rsvp/" + invite_code
     end
     
     private 

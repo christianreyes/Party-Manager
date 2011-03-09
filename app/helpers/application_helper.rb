@@ -6,4 +6,11 @@ module ApplicationHelper
 			return nil
 		end
 	end
+	
+	def email_header
+		str =  "<p>===========================================<br/>"
+		str += "    THIS IS A TEST OF A CLASS PROJECT<br/>"
+		str += "===========================================</p>"
+		return str
+	end
 end

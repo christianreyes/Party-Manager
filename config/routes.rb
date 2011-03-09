@@ -24,7 +24,7 @@ PartyManager::Application.routes.draw do
   # match 'contact' => 'home#contact', :as => :contact
   # match 'privacy' => 'home#privacy', :as => :privacy
 
-  match 'invite/:invite_code', :to => 'guest_invitations#rsvp'
+  match 'rsvp/:invite_code', :to => 'guest_invitations#rsvp'
 	
   # Set the root url
   root :to => 'home#index'
