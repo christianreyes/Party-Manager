@@ -1,0 +1,12 @@
+<p>To use the application, you should
+	<ol>
+		<li><%= link_to "Add a party", new_party_path %></li>
+		<li>
+			<ol>
+				<li><%= link_to "(Optional) Add a location", new_location_path %></li> 
+				<li>Edit the party to include that location</li>
+			</ol>
+		<li><%= link_to "Add guests", new_guest_path %></li>
+		<li><%= link_to "Invite the guests", new_guest_invitation_path %> to your party</li>
+	</ol>
+</p>

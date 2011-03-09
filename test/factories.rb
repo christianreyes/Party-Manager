@@ -1,3 +1,4 @@
+require 'time'
 # FACTORIES FOR PARTY MANAGER
 
 # Begin with the User class
@@ -28,13 +29,38 @@
 	l.city   "Washington"
 	l.state  "DC" 
 	l.zip    "20500"
+	#l.association :user
   end
   
-# Create factory for Party class
-#  Factory.define :party do |p|
-#    # your code here
-#    p.name       "My super fun party!"
-#    p.party_type PartyType.find_by_name("General Party")
-#	p.date = 1.month.from_now
-#    c.active true
-#  end
+  #Create factory for Party class
+  #Factory.define :party do |p|
+  #  p.name       "My super fun party!"
+  #  p.details "This party is going to be SOOOOO fun!"
+  #  p.start_time 1.hour.from_now
+  #  p.end_time 2.hours.from_now
+  #	p.date  2.months.from_now
+  #	p.rsvp_date  1.month.from_now
+	#p.public_party true
+	#p.public_guestlist true
+	#p.association :party_type
+	#p.association :location
+	#p.assocation :user
+  #end
+  
+#  Factory.define :guest do |g|
+ # 	g.name  "Billy Bob"
+  #	g.email "billy@bob.com"
+  	#g.notes "He is a sneaky one. Look out for him"
+  	#g.association :user
+  #end
+  
+  #Factory.define :guest_invitation do |g|
+  #	g.expected_attendees 5
+  #	g.association :guest
+  #	g.association :party
+  #end
+  
+  #Factory.define :gift do |g|
+  #	g.description "A gold watch"
+  	#g.association :guest_invitation
+  #end

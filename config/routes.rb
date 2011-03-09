@@ -20,6 +20,7 @@ PartyManager::Application.routes.draw do
   
   # Semi-static page routes
   match 'home' => 'home#index', :as => :home
+  match 'help' => 'home#help', :as => :home
   # match 'about' => 'home#about', :as => :about
   # match 'contact' => 'home#contact', :as => :contact
   # match 'privacy' => 'home#privacy', :as => :privacy
