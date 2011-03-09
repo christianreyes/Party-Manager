@@ -1,4 +1,5 @@
 include ApplicationHelper
+include LayoutHelper
 
 class PartyMailer < ActionMailer::Base
   default :from => "272partymanager@gmail.com"
