@@ -132,11 +132,12 @@ a {
   overflow: hidden;
 }
 
-.horizontal_title {
+h1 {
 	background-color: #FFDF87;
 	margin: 20px 0px 20px;
 	padding: 10px 8px;
 	text-align: center;
+	font-size: 1.2em;
 	font-weight: bold;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
