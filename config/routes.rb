@@ -1,4 +1,12 @@
 PartyManger::Application.routes.draw do
+  get "home/index"
+
+  get "home/about"
+
+  get "home/contact"
+
+  get "home/privacy"
+
   resources :parties
 
   resources :guests
@@ -14,6 +22,8 @@ PartyManger::Application.routes.draw do
   resources :sessions
 
   resources :hosts
+  
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
