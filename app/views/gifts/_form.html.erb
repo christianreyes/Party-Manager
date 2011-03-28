@@ -1,8 +1,0 @@
-<%= semantic_form_for(@gift) do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :guest_invitation, :as => :select, :collection => @invite_hash %>
-    <%= f.input :description %>
-    <%= f.input :note_sent_on %>
-  <% end %>
-  <%= f.buttons %>  
-<% end %>
