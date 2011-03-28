@@ -1,0 +1,8 @@
+<%if logged_in?%>
+	<div id="menu">
+		<ul>
+			<li><%= link_to 'Parties', parties_path %></li>
+		  	<li><%= link_to 'Guests', guests_path %></li>
+		</ul>
+	</div>
+<%end%>

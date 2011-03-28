@@ -21,11 +21,16 @@ module ControllerAuthentication
   end
 
   def current_host
-    @current_host ||= Host.find(session[:host_id]) if session[:host_id]
+    #@current_host ||= Host.find(session[:host_id]) if session[:host_id]
+	begin
+    	@current_host ||= Host.find(session[:host_id]) if session[:host_id]
+    rescue ActiveRecord::RecordNotFound => e
+  		@current_host = nil
+	end
   end
 
   def logged_in?
-    current_host
+    return !current_host.nil?
   end
 
   def login_required

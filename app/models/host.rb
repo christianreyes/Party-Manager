@@ -8,6 +8,8 @@ class Host < ActiveRecord::Base
   attr_accessor :password
   before_save :prepare_password
 
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true
   validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@"
@@ -24,6 +26,10 @@ class Host < ActiveRecord::Base
 
   def encrypt_password(pass)
     BCrypt::Engine.hash_secret(pass, password_salt)
+  end
+  
+  def name
+	first_name + " " + last_name
   end
 
   private
