@@ -10,7 +10,52 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-
+      
+    when /my account page/
+      edit_host_path(@an)
+      
+    when /the graduation party details page/
+      party_path(@grad)
+      
+    when /the birthday party details page/
+      party_path(@birthday)
+      
+    when /this party details page/
+      party_path(Party.last)
+      
+    when /my parties page/
+      parties_path
+      
+    when /the new party page/
+      new_party_path
+      
+    when /edit the graduation party/
+      edit_party_path(@grad)
+    
+    when /edit the birthday party/
+      edit_party_path(@birthday)
+    
+    when /my guests page/
+      guests_path
+      
+    when /this guest details page/
+      guest_path(@artis)
+      
+    when /the new guest page/
+      new_guest_path
+      
+    when /edit this guest page/
+      edit_guest_path(@artis)
+      
+    when /the About Us page/
+      about_path
+      
+    when /the Contact Us page/
+      contact_path
+      
+    when /the Privacy page/
+      privacy_path
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
