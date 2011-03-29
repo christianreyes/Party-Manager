@@ -1,24 +1,18 @@
 <% title "Party" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @party.name %>
-</p>
+<h1> <%= @party.name %> </h1>
+
 <p>
   <strong>Party Date:</strong>
   <%= @party.party_date %>
 </p>
 <p>
+  <strong>From:</strong>
+  <%= time(@party.start_time) %> - <%= time(@party.end_time) %>
+</p>
+<p>
   <strong>Location:</strong>
   <%= @party.location %>
-</p>
-<p>
-  <strong>Start Time:</strong>
-  <%= @party.start_time %>
-</p>
-<p>
-  <strong>End Time:</strong>
-  <%= @party.end_time %>
 </p>
 <p>
   <strong>Description:</strong>
@@ -26,16 +20,48 @@
 </p>
 <p>
   <strong>RSVP date:</strong>
-  <%= @party.rsvp_date %>
+  <% if @party.rsvp_date %>
+	<%= @party.rsvp_date %>
+  <% else %>
+	<%= "No RSVP required" %>
+  <% end %>
 </p>
 <p>
   <strong>Expected Attendance:</strong>
   <%= @party.expected_attendance %>
 </p>
 <p>
-  <strong>Actual Attendance:</strong>
+  <% if @party.party_date > DateTime.now %>
+    <strong>Confirmed Attendance:</strong>
+  <% else %>
+    <strong>Actual Attendance:</strong>
+  <% end %>
   <%= @party.actual_attendance %>
 </p>
+
+<h1>Invited Guests</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Invite Code</th>
+    <th>Expected Attendees</th>
+    <th>Actual Attendees</th>
+  </tr>
+  <% for guest in @guests %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.email %></td>
+      <td><%= guest.invite_code %></td>
+      <td><%= guest.expected_attendees %></td>
+      <td><%= guest.actual_attendees %></td>
+      <td><%= link_to "Show", guest %></td>
+      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
 
 <p>
   <%= link_to "Edit", edit_party_path(@party) %> |

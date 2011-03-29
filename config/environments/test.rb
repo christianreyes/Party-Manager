@@ -34,4 +34,5 @@ PartyManger::Application.configure do
   config.active_support.deprecation = :stderr
   
   Date::DATE_FORMATS[:default] = "%B %d, %Y"
+  Time::DATE_FORMATS[:default] = "%B %d, %Y"
 end

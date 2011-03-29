@@ -46,4 +46,7 @@ PartyManger::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  Date::DATE_FORMATS[:default] = "%B %d, %Y"
+  Time::DATE_FORMATS[:default] = "%B %d, %Y"
 end

@@ -7,6 +7,7 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
+	@guests = @party.guests
   end
 
   def new

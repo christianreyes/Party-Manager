@@ -7,20 +7,16 @@
     <th>Name</th>
     <th>Party Date</th>
     <th>Location</th>
-    <th>Start Time</th>
-    <th>End Time</th>
     <th>Description</th>
-    <th>Rsvp Date</th>
+    <th>RSVPs</th>
   </tr>
   <% for party in @parties %>
     <tr>
       <td><%= party.name %></td>
       <td><%= party.party_date %></td>
       <td><%= party.location %></td>
-      <td><%= party.start_time %></td>
-      <td><%= party.end_time %></td>
       <td><%= party.description %></td>
-      <td><%= party.rsvp_date %></td>
+      <td><%= party.actual_attendance %></td>
       <td><%= link_to "Show", party %></td>
       <td><%= link_to "Edit", edit_party_path(party) %></td>
       <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>

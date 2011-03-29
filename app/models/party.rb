@@ -26,11 +26,11 @@ class Party < ActiveRecord::Base
   end
   
   def party_date_before_now
-	errors.add :party_date, "Party date must be on or after today." if party_date < DateTime.now
+	errors.add :party_date, "Party date must be on or after today." if rsvp_date && party_date < DateTime.now
   end
   
   def rsvp_date_before_party_date
-	errors.add :party_date, "Rsvp date must be on or before the party date" if rsvp_date > party_date
+	errors.add :party_date, "Rsvp date must be on or before the party date" if rsvp_date && rsvp_date > party_date
   end
   
   
