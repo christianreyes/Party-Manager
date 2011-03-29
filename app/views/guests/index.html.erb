@@ -13,7 +13,7 @@
   </tr>
   <% for guest in @guests %>
     <tr>
-      <td><%= guest.party_id %></td>
+      <td><%= guest.party.name%></td>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
       <td><%= guest.invite_code %></td>

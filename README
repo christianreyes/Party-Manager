@@ -1,10 +1,7 @@
-This is a basic Rails app that is being built as a class project in the spring of 2011.  This is version 1 with another version planned to extend the site functionality and help students become more familiar with the Rails 3 framework.
+Christian Reyes
 
-The class is Application Design & Development and is for Information Systems students at Carnegie Mellon University (campuses both in Pittsburgh and Doha).  We have posted this application on heroku.com (phase2-67272) so students get some idea of what is expected.
+272 Section E extra credit
 
-This project does require the use of several gems to work properly.  Check the Gemfile to see which gems are used.  Also, unit testing requires the gems factory_girl, shoulda be installed before running tests.  For cucumber tests, students should use the following versions:
+All 47 cucumber tests pass.
 
-	cucumber-rails (0.4.0)
-	capybara (0.4.1.2)
-	json (1.5.1)
-	gherkin (2.3.5)
+rake test:prepare to get the database ready before testing :-)
