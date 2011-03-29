@@ -22,5 +22,8 @@ PartyManger::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  Date::DATE_FORMATS[:default] = "%B %d, %Y"
+  Time::DATE_FORMATS[:default] = "%B %d, %Y"
 end
 

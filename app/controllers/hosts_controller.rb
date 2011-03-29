@@ -4,6 +4,10 @@ class HostsController < ApplicationController
   def new
     @host = Host.new
   end
+  
+  def show
+	@host = current_host
+  end
 
   def create
     @host = Host.new(params[:host])

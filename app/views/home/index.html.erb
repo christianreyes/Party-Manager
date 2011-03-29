@@ -1,6 +1,6 @@
 <% title "Party Manager!" %>
 
-<h2>Welcome!</h2>
+<h2>Welcome<%= ", " + current_host.name if logged_in? %>!</h2>
 
 <p>This application helps you manage your party and send invitations</p>
 

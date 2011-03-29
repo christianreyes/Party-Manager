@@ -1,10 +1,6 @@
 <% title "Party" %>
 
 <p>
-  <strong>Host:</strong>
-  <%= @party.host_id %>
-</p>
-<p>
   <strong>Name:</strong>
   <%= @party.name %>
 </p>
@@ -29,8 +25,16 @@
   <%= @party.description %>
 </p>
 <p>
-  <strong>Rsvp Date:</strong>
+  <strong>RSVP date:</strong>
   <%= @party.rsvp_date %>
+</p>
+<p>
+  <strong>Expected Attendance:</strong>
+  <%= @party.expected_attendance %>
+</p>
+<p>
+  <strong>Actual Attendance:</strong>
+  <%= @party.actual_attendance %>
 </p>
 
 <p>

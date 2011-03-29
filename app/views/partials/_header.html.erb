@@ -4,11 +4,12 @@
 			<td class="app"> Party Manager </td>
 			<td class="user_info">
 	   			<% if logged_in? %>
-        			<%= current_host.name + " (" + current_host.email + ") | " %> 
-        			<%= link_to "Log out", logout_path %> 
+        			<%= current_host.name + " ( " %>
+					<%= link_to "My Account", current_host %> | 
+					<%= link_to "Logout", logout_path %> )
       	 		<% else %>
         			<%= link_to "Sign up", signup_path %> or
-         			<%= link_to "log in", login_path %>.
+         			<%= link_to "Log in", login_path %>.
       			<% end %>
       		</td>
       	</tr>

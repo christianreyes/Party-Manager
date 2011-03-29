@@ -3,7 +3,7 @@ class Host < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :email, :password, :password_confirmation
 
   has_many :parties
-  has_many :guests, :through => :party
+  has_many :guests, :through => :parties
   
   attr_accessor :password
   before_save :prepare_password

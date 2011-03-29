@@ -19,6 +19,11 @@ PartyManger::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
   
+  match 'about' => 'home#about'
+  
+  match 'contact' => 'home#contact'
+  
+  match 'privacy' => 'home#privacy'
 
   resources :sessions
 

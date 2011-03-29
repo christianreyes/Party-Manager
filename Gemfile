@@ -7,6 +7,7 @@ gem 'nifty-generators'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'chronic'
+gem 'rails-erd'
 
 group :development do
   gem 'wirble'

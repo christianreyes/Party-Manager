@@ -2,7 +2,7 @@ class PartiesController < ApplicationController
   before_filter :login_required
   
   def index
-    @parties = Party.all
+    @parties = current_host.parties
   end
 
   def show
@@ -14,6 +14,7 @@ class PartiesController < ApplicationController
   end
 
   def create
+	params[:party][:host_id] = current_host.id
     @party = Party.new(params[:party])
     if @party.save
       redirect_to @party, :notice => "Successfully created party."

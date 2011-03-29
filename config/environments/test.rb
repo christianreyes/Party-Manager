@@ -32,4 +32,6 @@ PartyManger::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  Date::DATE_FORMATS[:default] = "%B %d, %Y"
 end
