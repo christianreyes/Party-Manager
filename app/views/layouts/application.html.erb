@@ -9,10 +9,8 @@
     <%= yield(:head) %>
   </head>
   <body>
-  	<div id="header">
-     <%= render :partial => "partials/header_container" %>
-     <%= render :partial => "partials/menu_bar" %>
-    </div>
+    <%= render :partial => "partials/header" %>
+    <%= render :partial => "partials/menu_bar" %>
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

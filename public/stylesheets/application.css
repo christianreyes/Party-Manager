@@ -46,7 +46,6 @@ table {
 CSS RESET ^^ */
 
 body {
-  background-color: #303333;
   font-family: "Lucida Grande", Sans-Serif; 
   color: #272F32;
   margin: 0;
@@ -54,43 +53,54 @@ body {
 }
 
 #header {
-  background-color: #66B4C4;
-  border-bottom: 1px solid #000000;
+  background-image: url('../images/header-gradient.png');
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #FFF;
+  height: 110px;
+}
+
+#header h1{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/party-manager.png');
+  background-repeat: no-repeat;
+  height: 70px;
+  background-position: -12px top;
+  text-indent: -1000em;
+  width: 420px;
 }
 
 #header_container {
   margin: 0 auto;
-  text-align: left;
-  /*border: solid 1px black;
-  */
-  padding: 20px 40px;
+  padding: 20px 0px;
   width: 800px;
-  
+}
+
+#header_container  span{
+  margin-top: 28px;
+  float: right;
+  color: white;
+}
+
+#header_container a {
+  color: white;
+}
+
+#menu_container{
+  background-image: url('../images/menu-gradient.png');
+  background-repeat: repeat-x;
+  height: 30px;
 }
 
 #container {
   /*width: 75%;*/
   display: block;
   width: 800px;
+  min-height: 400px;
   margin: 0 auto;
   background-color: #FFFFFF;
-  padding: 20px 40px;
-}
-
-#footer {
-  border-top: 1px solid #000000;
-  margin: 0px auto;
-  text-align: center;
-  background-color: #FFDF87;
-  line-height: 40px;
-  width: 880px;
-  height: 40px;
-  -moz-border-radius: 0px 0px 15px 15px;
-  border-radius: 0px 0px 15px 15px;
-}
-
-#footer span{
-  margin: 20px auto 20px;
+  padding: 10px 40px;
 }
 
 #header_container .app {
@@ -198,14 +208,17 @@ a {
 
 #menu 
 {
+	/*
 	-moz-border-radius: 10px 10px 0px 0px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
     text-align: center;
 	width: 880px;
 	height: 30px;
 	margin: 0 auto;
 	padding: 0;
+	/*
 	background: #303333;
+	*/
 }
 
 #menu ul {
@@ -222,6 +235,7 @@ a {
 
 #menu a {
 	display: block;
+	color: black;
 	width: 130px;
 	height: 25px;
 	padding-top: 5px;
@@ -231,15 +245,45 @@ a {
 	font-family: Ariel, Helvetica, sans-serif;
 	font-size: 13px;
 	font-weight: bold;
-	color: #FFFFFF;
 	border: none;
 }
 
 #menu a:hover, #menu .current_page_item a {
-	-moz-border-radius: 10px 10px 0px 0px;
-    border-radius: 10px 10px 0px 0px;
-	background: #2C2C2C;
+	/*-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
+	color: white;
+	background-color: black;
 	text-decoration: none;
+}
+
+#footer_container{
+  background-image: url('../images/footer-gradient.png');
+  background-repeat: repeat-x;
+  height: 30px;
+  width: 800px;
+  margin: 0 auto;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#footer {
+  color: black;
+  margin: 0px auto;
+  text-align: center;
+  line-height: 30px;
+  width: 880px;
+  height: 40px;
+  /*-moz-border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;*/
+}
+
+#footer span{
+  margin: 20px auto;
+}
+
+#footer a{
+  color: black;
+  text-decoration: none;
 }
 
 /*Flash notices*/
