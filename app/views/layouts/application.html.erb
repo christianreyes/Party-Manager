@@ -3,7 +3,7 @@
   <head>
 	<meta charset="UTF-8">
     <title><%= content_for?(:title) ? yield(:title) : "Party Manager: " + controller.controller_name.capitalize %></title>
-    <%= stylesheet_link_tag "application", "formtastic", "formtastic_changes", "jquery-ui", :cache => true %>
+    <%= stylesheet_link_tag "application", "formtastic", "formtastic_changes", "jquery-ui" %>
     <%= javascript_include_tag :defaults, "jquery-ui.min" , :cache => true%>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
