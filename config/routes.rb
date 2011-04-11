@@ -1,5 +1,7 @@
 PartyManager::Application.routes.draw do
-  
+
+  get "google_map/index"
+
   # Authentication
   resources :sessions
   resources :users   

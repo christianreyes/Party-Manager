@@ -125,8 +125,10 @@ body{
   line-height: 110%;
 }
 
-#map_info{
+#map_container{
   display: inline;
+  height: 360px;
+  width: 460px;
   text-align: center;
   float: right;
 }
@@ -208,20 +210,16 @@ a {
 }
 
 #footer_container{
-  background-image: url('../images/footer-gradient.png');
-  background-repeat: repeat-x;
   height: 30px;
   width: 800px;
   margin: 0 auto;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
 }
 
 #footer {
-  color: black;
+  color: white;
   margin: 0px auto;
   text-align: center;
-  line-height: 30px;
+  line-height: 15px;
   width: 880px;
   height: 40px;
   /*-moz-border-radius: 0px 0px 15px 15px;
@@ -233,7 +231,7 @@ a {
 }
 
 #footer a{
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
