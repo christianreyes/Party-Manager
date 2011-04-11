@@ -9,6 +9,7 @@ gem 'formtastic_datepicker_inputs'
 gem 'heroku'
 gem 'meta_where'
 gem 'mail'
+gem 'geokit'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do

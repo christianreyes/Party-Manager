@@ -19,7 +19,7 @@
     </span>
 </div>
 <% if @party.location%>
-  <iframe id="map_container" src="/google_map/index/?lat=40.4439587059&lon=-79.941394329&zoom=13" ></iframe>
+  <iframe id="map_container" src="/google_map/index/?lat=<%= @party.location.latitude%>&lon=<%=@party.location.longitude %>&zoom=13" ></iframe>
 <%else%>
   <div id="map_info">
   	<%= image_tag "gmap_placeholder.png", :alt => 'Add a location to get a map'%> <br />

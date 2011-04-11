@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
     attr_accessible :id, :name, :street, :city, :state, :zip, :latitude, :longitude, :description, :host_id
     
+	before_save :save_coordinates
+	
     has_many :parties
 
     belongs_to :user, :class_name => "User", :foreign_key => "host_id"
@@ -10,6 +12,15 @@ class Location < ActiveRecord::Base
     validates_presence_of :longitude, :if => :lat_or_long_present
     validates_numericality_of :latitude, :longitude, :if => :lat_or_long_present
     
+	def save_coordinates
+     coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{address}"
+	 if coord.success
+	   self.latitude, self.longitude = coord.ll.split(',')
+	 else
+	   errors.add_to_base("Error with geocoding")
+	 end
+   end
+	
     def address
     	str = String.new
     	str = comma_add(str, street)
@@ -61,8 +72,6 @@ class Location < ActiveRecord::Base
     	string += "&sensor=false"
     	return string
     end
-    
-    
     
     def lat_or_long_present
     	return latitude != nil || longitude !=nil
