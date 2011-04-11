@@ -93,29 +93,66 @@ body {
   height: 30px;
 }
 
+/*Menu code*/
+
+#menu 
+{
+	/*
+	-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
+    text-align: center;
+	width: 880px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	/*
+	background: #303333;
+	*/
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	color: black;
+	width: 120px;
+	height: 25px;
+	padding-top: 5px;
+	border-right: 1px solid #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-family: Ariel, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	/*-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
+	color: white;
+	background-color: black;
+	text-decoration: none;
+}
+
 #container {
   /*width: 75%;*/
   display: block;
   width: 800px;
   min-height: 400px;
-  margin: 0 auto;
+  margin: 5px auto;
   background-color: #FFFFFF;
   padding: 10px 40px;
-}
-
-#header_container .app {
-   font-weight: 700;
-   line-height: 1.6em;
-   font-size: 26px;
-}
-
-#header_container table{
-   width: 100%;
-   vertical-align: middle;
-}
-
-#header_container .user_info {
-   text-align: right;
 }
 
 #party_info {
@@ -204,58 +241,6 @@ a {
 	background-color: #D3D9F5;
 }
 
-/*Menu code*/
-
-#menu 
-{
-	/*
-	-moz-border-radius: 10px 10px 0px 0px;
-    border-radius: 10px 10px 0px 0px;*/
-    text-align: center;
-	width: 880px;
-	height: 30px;
-	margin: 0 auto;
-	padding: 0;
-	/*
-	background: #303333;
-	*/
-}
-
-#menu ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	line-height: normal;
-}
-
-
-#menu li {
-	float: left;
-}
-
-#menu a {
-	display: block;
-	color: black;
-	width: 130px;
-	height: 25px;
-	padding-top: 5px;
-	border-right: 1px solid #FFFFFF;
-	text-decoration: none;
-	text-align: center;
-	font-family: Ariel, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-	border: none;
-}
-
-#menu a:hover, #menu .current_page_item a {
-	/*-moz-border-radius: 10px 10px 0px 0px;
-    border-radius: 10px 10px 0px 0px;*/
-	color: white;
-	background-color: black;
-	text-decoration: none;
-}
-
 #footer_container{
   background-image: url('../images/footer-gradient.png');
   background-repeat: repeat-x;
@@ -334,3 +319,21 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+/******* FORM *******/  
+
+form label{  
+    display: block;  
+    color: #6C6C6C;  
+    font-weight: 700;  
+    line-height: 1.4em;  
+}  
+
+form input  
+{
+    /*width: 220px; */ 
+    padding: 6px;  
+    color: #949494;  
+    font-size: 11px;
+    border: 1px solid #cecece; 
+}  
