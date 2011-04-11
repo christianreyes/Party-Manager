@@ -1,55 +1,9 @@
-/* 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-/*article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-CSS RESET ^^ */
-
-body {
+body{
   font-family: "Lucida Grande", Sans-Serif; 
   color: #272F32;
   margin: 0;
   padding: 0;
+  background-color: #444;
 }
 
 #header {
@@ -65,10 +19,14 @@ body {
   padding: 0;
   background-image: url('../images/party-manager.png');
   background-repeat: no-repeat;
-  height: 70px;
+  height: 75px;
   background-position: -12px top;
   text-indent: -1000em;
   width: 420px;
+}
+
+#header a{
+  text-decoration: none;
 }
 
 #header_container {
@@ -91,6 +49,7 @@ body {
   background-image: url('../images/menu-gradient.png');
   background-repeat: repeat-x;
   height: 30px;
+  border-top: 1px solid #000;
 }
 
 /*Menu code*/
@@ -150,9 +109,16 @@ body {
   display: block;
   width: 800px;
   min-height: 400px;
-  margin: 5px auto;
+  margin: 0 auto 20px auto;
   background-color: #FFFFFF;
   padding: 10px 40px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  box-shadow: 7px 7px 8px #222;
+  -webkit-box-shadow: 7px 7px 8px #222;
+  -moz-box-shadow: 7px 7px 8px #222;
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=#222, offX=7, offY=7, positive=true);
 }
 
 #party_info {
@@ -321,7 +287,7 @@ a {
 }
 
 /******* FORM *******/  
-
+/*
 form label{  
     display: block;  
     color: #6C6C6C;  
@@ -331,9 +297,10 @@ form label{
 
 form input  
 {
-    /*width: 220px; */ 
+    width: 220px; 
     padding: 6px;  
     color: #949494;  
     font-size: 11px;
     border: 1px solid #cecece; 
 }  
+*/
