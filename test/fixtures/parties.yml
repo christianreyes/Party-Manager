@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  party_type_id: 1
+  host_id: 1
+  name: MyString
+  date: 2011-04-14
+  location_id: 1
+  start_time: 2011-04-14 22:56:07
+  end_time: 2011-04-14 22:56:07
+  description: MyText
+  rsvp_date: 2011-04-14
+
+two:
+  party_type_id: 1
+  host_id: 1
+  name: MyString
+  date: 2011-04-14
+  location_id: 1
+  start_time: 2011-04-14 22:56:07
+  end_time: 2011-04-14 22:56:07
+  description: MyText
+  rsvp_date: 2011-04-14

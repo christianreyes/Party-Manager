@@ -1,4 +1,6 @@
 PartyManager::Application.routes.draw do
+  resources :parties
+
   resources :guests
 
   resources :locations
