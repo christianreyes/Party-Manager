@@ -1,0 +1,303 @@
+body{
+  font-family: "Lucida Grande", Sans-Serif; 
+  color: #272F32;
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+}
+
+#header {
+  background-image: url('../images/header-gradient.png');
+  background-repeat: repeat-x;
+  height: 110px;
+}
+
+#header h1{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/party-manager.png');
+  background-repeat: no-repeat;
+  height: 75px;
+  background-position: -12px top;
+  text-indent: -1000em;
+  width: 420px;
+}
+
+#header a{
+  text-decoration: none;
+}
+
+#header_container {
+  margin: 0 auto;
+  padding: 20px 0px;
+  width: 800px;
+}
+
+#header_container  span{
+  margin-top: 28px;
+  float: right;
+  color: white;
+}
+
+#header_container a {
+  color: white;
+}
+
+#menu_container{
+  background-image: url('../images/menu-gradient.png');
+  background-repeat: repeat-x;
+  height: 30px;
+  border-top: 1px solid #000;
+}
+
+/*Menu code*/
+
+#menu 
+{
+	/*
+	-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
+    text-align: center;
+	width: 880px;
+	height: 30px;
+	margin: 0 auto;
+	padding: 0;
+	/*
+	background: #303333;
+	*/
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	color: black;
+	width: 120px;
+	height: 25px;
+	padding-top: 5px;
+	border-right: 1px solid #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-family: Ariel, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	/*-moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;*/
+	color: white;
+	background-color: black;
+	text-decoration: none;
+}
+
+#container {
+  /*width: 75%;*/
+  display: block;
+  width: 800px;
+  min-height: 400px;
+  margin: 0 auto 20px auto;
+  background-color: #FFFFFF;
+  padding: 10px 40px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  box-shadow: 7px 7px 8px #222;
+  -webkit-box-shadow: 7px 7px 8px #222;
+  -moz-box-shadow: 7px 7px 8px #222;
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=#222, offX=7, offY=7, positive=true);
+}
+
+#party_info {
+  line-height: 110%;
+}
+
+#map_container{
+  display: inline;
+  height: 360px;
+  width: 460px;
+  text-align: center;
+  float: right;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.horizontal_title {
+	background-color: #FFDF87;
+	margin: 20px 0px 20px;
+	padding: 10px 8px;
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.horizontal_title span {
+	font-weight: normal;
+}
+
+/* -----  Tables  ---- 
+	Inspired/modified: http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
+*/
+
+.party_info_table{
+	vertical-align: text-top;
+	text-align: left;
+	border-spacing: 1em;
+}
+
+.party_info_table th {
+	width: 100px;
+}
+
+.minimal_table
+{
+	/*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	 font-size: 12px; */
+	background: #fff; 
+	/* margin: 45px; */
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.minimal_table th
+{
+	/*
+	font-size: 14px;
+	font-weight: normal;
+	 color: #039;
+	 */
+	text-align: center;
+	padding: 10px 8px;
+	border-bottom: 2px solid black;
+}
+.minimal_table td
+{
+	padding: 9px 8px 0px 8px;
+}
+
+.minimal_table tbody tr:hover td
+{
+	color: #009;
+	background-color: #D3D9F5;
+}
+
+#footer_container{
+  height: 30px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#footer {
+  color: white;
+  margin: 0px auto;
+  text-align: center;
+  line-height: 15px;
+  width: 880px;
+  height: 40px;
+  /*-moz-border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;*/
+}
+
+#footer span{
+  margin: 20px auto;
+}
+
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+
+/*Flash notices*/
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
+
+/******* FORM *******/  
+/*
+form label{  
+    display: block;  
+    color: #6C6C6C;  
+    font-weight: 700;  
+    line-height: 1.4em;  
+}  
+
+form input  
+{
+    width: 220px; 
+    padding: 6px;  
+    color: #949494;  
+    font-size: 11px;
+    border: 1px solid #cecece; 
+}  
+*/

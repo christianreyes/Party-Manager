@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PartyManager</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "application", "rails", "jquery" %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+	<meta charset="UTF-8">
+    <title><%= content_for?(:title) ? yield(:title) : "Party Manager: " + controller.controller_name.capitalize %></title>
+    <%= stylesheet_link_tag "application", "jquery-ui" %>
+    <%= javascript_include_tag "application", "rails", "jquery", "jquery-ui.min" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+	<link rel="icon" href="/favicon.ico" type="image/ico" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+  </head>
+  <body>
+    <%= render :partial => "partials/header" %>
+    <%= render :partial => "partials/menu_bar" %>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= yield %>     
+    </div>
+    <%= render :partial => "partials/footer" %>
+  </body>
 </html>

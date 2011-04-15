@@ -1,4 +1,6 @@
 PartyManager::Application.routes.draw do
+  root :to => "parties#index"
+  
   match 'host/edit' => 'hosts#edit', :as => :edit_current_host
 
   match 'signup' => 'hosts#new', :as => :signup
@@ -70,7 +72,6 @@ PartyManager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 
