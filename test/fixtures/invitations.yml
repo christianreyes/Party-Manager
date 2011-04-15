@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  party_id: 1
+  guest_id: 1
+  invite_code: MyString
+  expected_attendees: 1
+  actual_attendees: 1
+
+two:
+  party_id: 1
+  guest_id: 1
+  invite_code: MyString
+  expected_attendees: 1
+  actual_attendees: 1
