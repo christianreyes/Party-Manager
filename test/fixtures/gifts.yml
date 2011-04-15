@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  invitation_id: 1
+  description: MyText
+  note_sent_on: 2011-04-14
+
+two:
+  invitation_id: 1
+  description: MyText
+  note_sent_on: 2011-04-14
