@@ -1,8 +1,9 @@
 class GuestsController < ApplicationController
+  before_filter :login_required
   # GET /guests
   # GET /guests.xml
   def index
-    @guests = Guest.all
+    @guests = current_host.guests
 
     respond_to do |format|
       format.html # index.html.erb

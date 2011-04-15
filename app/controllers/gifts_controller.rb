@@ -1,8 +1,9 @@
 class GiftsController < ApplicationController
+  before_filter :login_required
   # GET /gifts
   # GET /gifts.xml
   def index
-    @gifts = Gift.all
+    @gifts = current_host.gifts
 
     respond_to do |format|
       format.html # index.html.erb

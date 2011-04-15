@@ -1,8 +1,9 @@
 class PartiesController < ApplicationController
+  before_filter :login_required
   # GET /parties
   # GET /parties.xml
   def index
-    @parties = Party.all
+    @parties = current_host.parties
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,6 +41,7 @@ class PartiesController < ApplicationController
   # POST /parties
   # POST /parties.xml
   def create
+    params[:party][:host_id] = current_host.id
     @party = Party.new(params[:party])
 
     respond_to do |format|
@@ -57,6 +59,7 @@ class PartiesController < ApplicationController
   # PUT /parties/1.xml
   def update
     @party = Party.find(params[:id])
+	params[:party][:host_id] = current_host.id
 
     respond_to do |format|
       if @party.update_attributes(params[:party])

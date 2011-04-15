@@ -1,8 +1,9 @@
 class InvitationsController < ApplicationController
+  before_filter :login_required
   # GET /invitations
   # GET /invitations.xml
   def index
-    @invitations = Invitation.all
+    @invitations = current_host.invitations
 
     respond_to do |format|
       format.html # index.html.erb

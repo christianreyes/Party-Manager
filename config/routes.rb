@@ -1,5 +1,15 @@
 PartyManager::Application.routes.draw do
-  root :to => "parties#index"
+  root :to => 'home#index'
+  
+  match 'index' => 'home#index', :as => :index
+
+  match 'about' => 'home#about', :as => :about
+
+  match 'contact' => 'home#contact', :as => :contact
+
+  match 'privacy' => 'home#privacy', :as => :privacy
+
+  match 'dashboard' => 'home#dashboard', :as => :dashboard
   
   match 'host/edit' => 'hosts#edit', :as => :edit_current_host
 

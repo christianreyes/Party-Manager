@@ -1,8 +1,9 @@
 class LocationsController < ApplicationController
+  before_filter :login_required
   # GET /locations
   # GET /locations.xml
   def index
-    @locations = Location.all
+    @locations = current_host.locations
 
     respond_to do |format|
       format.html # index.html.erb

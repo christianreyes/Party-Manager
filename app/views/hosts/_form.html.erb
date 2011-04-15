@@ -1,5 +1,5 @@
 <%= form_for @host do |f| %>
-  <%= render :partial => "partials/errors", :target => @host %>
+  <%= render :partial => "partials/errors", :locals => {:target => @host}  %>
   <p>
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
