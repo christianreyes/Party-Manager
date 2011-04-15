@@ -17,15 +17,23 @@
 #   before_filter :login_required, :except => [:index, :show]
 module ControllerAuthentication
   def self.included(controller)
-    controller.send :helper_method, :current_host, :logged_in?, :redirect_to_target_or_default
+    controller.send :helper_method, :current_host, :logged_in?, :administrator?, :redirect_to_target_or_default
   end
 
   def current_host
-    @current_host ||= Host.find(session[:host_id]) if session[:host_id]
+    begin
+		@current_host ||= Host.find(session[:host_id]) if session[:host_id]
+	rescue ActiveRecord::RecordNotFound => e
+  		@current_host = nil
+	end
   end
 
   def logged_in?
     current_host
+  end
+  
+  def administrator?
+    current_host.administrator if logged_in?
   end
 
   def login_required
