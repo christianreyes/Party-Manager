@@ -3,8 +3,8 @@
   <head>
 	<meta charset="UTF-8">
     <title><%= content_for?(:title) ? yield(:title) : "Party Manager: " + controller.controller_name.capitalize %></title>
-    <%= stylesheet_link_tag "jquery-ui", "application" %>
-    <%= javascript_include_tag "jquery", "jquery-ui.min", "application", "rails" %>
+    <%= stylesheet_link_tag "jquery-ui", "application"%>
+    <%= javascript_include_tag "jquery", "jquery-ui.min", "application", "rails"%>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
 	<link rel="icon" href="/favicon.ico" type="image/ico" />

@@ -3,16 +3,11 @@
 <div id="party_details_map">
 	<div id="party_detail_container">
 		<p>
-		  <b>Party type:</b>
-		  <%= @party.party_type_id %>
-		</p>
-		<p>
 		  <b>Date:</b>
 		  <%= date @party.date %>
 		</p>
 		<p>
 		  <b>Location:</b>
-		  <%= @party.location_id %>
 		  <span class="address">5032 Forbes Ave, Pittsburgh, PA 15289</span>
 		</p>
 		<p>
@@ -28,9 +23,7 @@
 		</p>
 	</div>
 	<div id="map_container">
-		<div id="map">
-			<span>I AM A MAP!</span>
-		</div>
+		<%= image_tag(@party.location.google_map_link, :size => "430x360") if @party.location %>
 	</div>
 </div>
 <h2 class="guest_list horizontal">Guest List</h2>

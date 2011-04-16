@@ -6,6 +6,14 @@ body{
   background-color: #444;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #header {
   background-image: url('../images/header-gradient.png');
   background-repeat: repeat-x;
@@ -22,10 +30,6 @@ body{
   background-position: -12px top;
   text-indent: -1000em;
   width: 420px;
-}
-
-#header a{
-  text-decoration: none;
 }
 
 #header_container {
@@ -120,17 +124,20 @@ body{
   filter: progid:DXImageTransform.Microsoft.dropShadow(color=#222, offX=7, offY=7, positive=true);
 }
 
-#map_container{
-  display: inline;
-  height: 360px;
-  width: 460px;
-  text-align: center;
-  float: right;
+#accordion div{
+  text-align:center;
 }
 
-a {
-  color: #0000FF;
+#map_container{
+  display: inline;
+  width: 430px;
+  height: 360px;
+  text-align: center;
+  float: right;
+  background-color: #EEE;
 }
+
+
 
 .clear {
   clear: both;
@@ -176,13 +183,6 @@ span.address{
 	width: 230px;
 	white-space:normal; 
 	vertical-align: top;
-}
-
-#map_container {
-	width: 430px;
-	float: right;
-	padding-top: 1em;
-	background-color: #EEE;
 }
 
 .guest_list {

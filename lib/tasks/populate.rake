@@ -8,16 +8,26 @@ namespace :db do
     [Location, Invitation, Guest, Party].each(&:destroy_all)
 	
 	puts "Destroyed all Location, Invitation, Guest, Party"
-    
-	c = Host.all.select { |u| u.username == "trogrey121"}.first
+	
+	t = Host.where(:username => "test").first
+	if t.nil? 
+		t = Host.new
+		t.first_name = "Party"
+		t.last_name = "Tester"
+		t.username = "test"
+		t.email = "test@test.com"
+		t.password = "test"
+		t.password_confirmation = "test"
+		t.save!
+	end
     
     cmu = Location.new
-    cmu.host_id = c.id
+    cmu.host_id = t.id
     cmu.name = "Carnegie Mellon University"
     cmu.address = "5032 Forbes Ave, Pittsburgh, PA 15213"
     cmu.save!
 	
-	10.times do
+	5.times do
 		p = Party.new
 		p.name = Faker::Company.bs.capitalize.slice(0..25)
 		p.location_id = cmu.id
@@ -30,16 +40,16 @@ namespace :db do
 		p.end_time = p.start_time + rand(5).hours
 		p.rsvp_date = p.date - rand(30).days
 		p.description = Faker::Company.bs * 3
-		p.host_id = c.id
+		p.host_id = t.id
 		p.save!
 		
-		t = (5 + rand(5))
-		t.times do 
+		n = (5 + rand(5))
+		n.times do 
 			g = Guest.new
 			g.name = Faker::Name.name
 			g.email = Faker::Internet.free_email(g.name)
 			g.notes = Faker::Lorem.sentence
-			g.host_id = c.id
+			g.host_id = t.id
 			g.save!
 			
 			i = Invitation.new
@@ -55,7 +65,7 @@ namespace :db do
 
 			i.save!
 		end
-		puts "Created party: #{p.name}, Invited #{t} guests"
+		puts "Created party: #{p.name}, Invited #{n} guests"
 	end
 	
   end

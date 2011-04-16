@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div id="menu_container">
 	<div id="menu">
 		<ul>
@@ -6,7 +7,7 @@
 			<li><%= link_to 'Guests', guests_path %></li>
 			<li><%= link_to 'Invitations', invitations_path %></li>
 			<li><%= link_to 'Locations', locations_path %></li>
-			<li><%= link_to 'Gifts', gifts_path %></li>
 		</ul>
 	</div>
 </div>
+<% end %>

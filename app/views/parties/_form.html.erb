@@ -1,15 +1,5 @@
 <%= form_for(@party) do |f| %>
-  <% if @party.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
-
-      <ul>
-      <% @party.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render :partial => "partials/errors", :locals => {:target => @party}  %>
 
   <div class="field">
     <%= f.label :party_type_id %><br />

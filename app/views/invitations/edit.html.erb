@@ -1,6 +1,28 @@
 <h1>Editing invitation</h1>
 
-<%= render 'form' %>
+<%= form_for(@invitation) do |f| %>
+  <%= render :partial => "partials/errors", :locals => {:target => @invitation}  %>
+
+  <div class="field">
+    <%= f.label :party_id %><br />
+    <%= f.collection_select(:party_id ,@parties,:id, :name,{:prompt =>"Select Party"})%>
+  </div>
+  <div class="field">
+    <%= f.label :guest_id %><br />
+    <%= f.collection_select(:guest_id ,@guests,:id, :name,{:prompt =>"Select Guest"})%>
+  </div>
+  <div class="field">
+    <%= f.label :expected_attendees %><br />
+    <%= f.text_field :expected_attendees %>
+  </div>
+  <div class="field">
+    <%= f.label :actual_attendees %><br />
+    <%= f.text_field :actual_attendees %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @invitation %> |
 <%= link_to 'Back', invitations_path %>
