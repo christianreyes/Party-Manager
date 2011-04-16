@@ -24,6 +24,10 @@ class Host < ActiveRecord::Base
 	"#{first_name} #{last_name}"
   end
   
+  def gifts
+    Host.joins(:parties)
+  end
+  
   # login can be either username or email address
   def self.authenticate(login, pass)
     host = find_by_username(login) || find_by_email(login)

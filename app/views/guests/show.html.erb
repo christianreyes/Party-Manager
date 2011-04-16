@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @guest.name %>
-</p>
+<h1 class="horizontal"><%= @guest.name %></h1>
 
 <p>
   <b>Email:</b>
@@ -15,6 +12,28 @@
   <%= @guest.notes %>
 </p>
 
+<h2 class="horizontal">Parties Attended</h2>
+<table class="minimal">
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Time</th>
+	<th># Expected</th>
+	<th># Confirmed</th>
+  </tr>
+
+<% @invitations.each do |invite| %>
+  <tr>
+    <td><%= link_to invite.party.name, invite.party %></td>
+    <td><%= date invite.party.date %></td>
+    <td><%= invite.party.location.name if invite.party.location %></td>
+    <td><%= "#{time invite.party.start_time} - #{time invite.party.end_time}" %></td>
+	<td><%= invite.expected_attendees %></td>
+	<td><%= invite.actual_attendees %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_guest_path(@guest) %> |
 <%= link_to 'Back', guests_path %>

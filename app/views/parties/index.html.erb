@@ -1,51 +1,59 @@
-<h2 class="horizontal">Upcoming Parties</h2>
+<% if @upcoming_parties.length > 0 || @past_parties.length > 0 %>
+	<% if @upcoming_parties.length > 0 %>
 
-<table class="minimal">
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Time</th>
-	<th># Expected</th>
-	<th># Confirmed</th>
-  </tr>
+	<h2 class="horizontal">Upcoming Parties</h2>
 
-<% @upcoming_parties.each do |party| %>
-  <tr>
-    <td><%= link_to party.name, party %></td>
-    <td><%= date party.date %></td>
-    <td><%= party.location.name if party.location %></td>
-    <td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
-	<td><%= party.number_expected_guests %></td>
-	<td><%= party.number_actual_guests %></td>
-  </tr>
+	<table class="minimal">
+	  <tr>
+		<th>Name</th>
+		<th>Date</th>
+		<th>Location</th>
+		<th>Time</th>
+		<th># Expected</th>
+		<th># Confirmed</th>
+	  </tr>
+
+	<% @upcoming_parties.each do |party| %>
+	  <tr>
+		<td><%= link_to party.name, party %></td>
+		<td><%= date party.date %></td>
+		<td><%= party.location.name if party.location %></td>
+		<td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+		<td><%= party.number_expected_guests %></td>
+		<td><%= party.number_actual_guests %></td>
+	  </tr>
+	<% end %>
+	</table>
+	<% end %>
+	<% if @past_parties.length > 0 %>
+	<h2 class="horizontal">Past Parties</h2>
+
+	<table class="minimal">
+	  <tr>
+		<th>Name</th>
+		<th>Date</th>
+		<th>Location</th>
+		<th>Time</th>
+		<th># Expected</th>
+		<th># Confirmed</th>
+	  </tr>
+
+	<% @past_parties.each do |party| %>
+	  <tr>
+		<td><%= link_to party.name, party %></td>
+		<td><%= date party.date %></td>
+		<td><%= party.location.name if party.location  %></td>
+		<td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+		<td><%= party.number_expected_guests %></td>
+		<td><%= party.number_actual_guests %></td>
+	  </tr>
+	<% end %>
+	</table>
+	<% end %>
+<% else %>
+	<h2 class="horizontal">No Parties to display</h2>
+	<p>You have no parties to display. Get started by creating a party!</p>
 <% end %>
-</table>
-
-<h2 class="horizontal">Past Parties</h2>
-
-<table class="minimal">
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Time</th>
-	<th># Expected</th>
-	<th># Confirmed</th>
-  </tr>
-
-<% @past_parties.each do |party| %>
-  <tr>
-    <td><%= link_to party.name, party %></td>
-    <td><%= date party.date %></td>
-    <td><%= party.location.name if party.location  %></td>
-    <td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
-	<td><%= party.number_expected_guests %></td>
-	<td><%= party.number_actual_guests %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Party', new_party_path %>

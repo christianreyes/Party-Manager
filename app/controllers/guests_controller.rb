@@ -15,6 +15,7 @@ class GuestsController < ApplicationController
   # GET /guests/1.xml
   def show
     @guest = Guest.find(params[:id])
+	@invitations = @guest.invitations
 
     respond_to do |format|
       format.html # show.html.erb

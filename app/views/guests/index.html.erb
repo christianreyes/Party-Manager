@@ -1,24 +1,29 @@
-<h1>Listing guests</h1>
+<% if @guests.length > 0 %>
+	<h1 class="horizontal">Your Guests</h1>
 
-<table class="minimal">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Notes</th>
-    <th colspan="3">Actions</th>
-  </tr>
+	<table class="minimal">
+	  <tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Notes</th>
+		<th colspan="3">Actions</th>
+	  </tr>
 
-<% @guests.each do |guest| %>
-  <tr>
-    <td><%= guest.name %></td>
-    <td><%= guest.email %></td>
-    <td><%= guest.notes %></td>
-    <td><%= link_to 'Show', guest %></td>
-    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <td><%= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<% @guests.each do |guest| %>
+	  <tr>
+		<td><%= guest.name %></td>
+		<td><%= guest.email %></td>
+		<td><%= guest.notes %></td>
+		<td><%= link_to 'Show', guest %></td>
+		<td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+		<td><%= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+<% else %>
+	<h2 class="horizontal">No Guests to display</h2>
+	<p>You have no parties to display. Get started by creating some guests!</p>
 <% end %>
-</table>
 
 <br />
 

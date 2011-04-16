@@ -7,6 +7,7 @@ class Party < ActiveRecord::Base
 	scope :all, order(:name.asc)
     scope :upcoming, where(:date > Date.yesterday).order(:date.asc)
     scope :past,     where(:date <= Date.yesterday).order(:date.desc)
+	scope :desc, order(:date.desc)
 	
 	def number_expected_guests
 		return self.guests.sum('expected_attendees')

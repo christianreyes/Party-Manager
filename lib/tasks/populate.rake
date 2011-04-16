@@ -33,7 +33,7 @@ namespace :db do
 		p.host_id = c.id
 		p.save!
 		
-		t = (5 + rand(10))
+		t = (5 + rand(5))
 		t.times do 
 			g = Guest.new
 			g.name = Faker::Name.name
