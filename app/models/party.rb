@@ -10,7 +10,7 @@ class Party < ActiveRecord::Base
     scope :past,     where(:date <= Date.yesterday).order(:date.desc)
 	scope :desc, order(:date.desc)
 	
-	validates :date, :presence => true, :date => {:after => Proc.new { Date.yesterday } }
+	#validates :date, :presence => true, :date => {:after => Proc.new { Date.yesterday } }
 	validates :name, :presence => true
 	validate :proper_time
 	
