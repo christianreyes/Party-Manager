@@ -316,20 +316,30 @@ table.minimal tr:hover td{
 }
 
 /******* FORM *******/  
-/*
-form label{  
+
+form div.field {
+	margin: 10px 0;
+}
+
+form div.field label{  
     display: block;  
-    color: #6C6C6C;  
+    color: black;  
     font-weight: 700;  
-    line-height: 1.4em;  
+    line-height: 1.4em; 
 }  
 
-form input  
-{
-    width: 220px; 
-    padding: 6px;  
-    color: #949494;  
+form input, form select{
+	padding: 6px;    
     font-size: 11px;
     border: 1px solid #cecece; 
+}
+
+form input[type=text]{
+	width: 220px;
+}
+
+form input[type=submit]:hover
+{
+	background-color: #AAA;
+    border: 1px solid #BBB; 
 }  
-*/

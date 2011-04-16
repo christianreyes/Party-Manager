@@ -38,8 +38,8 @@ class InvitationsController < ApplicationController
   # GET /invitations/1/edit
   def edit
     @invitation = Invitation.find(params[:id])
-	@parties = current_host.parties
-	@guests = current_host.guests
+	@parties = current_host.parties.all
+	@guests = current_host.guests.all
   end
 
   # POST /invitations

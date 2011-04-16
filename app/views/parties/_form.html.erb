@@ -2,31 +2,31 @@
   <%= render :partial => "partials/errors", :locals => {:target => @party}  %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %> 
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :date %> 
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :location_id, "Choose existing location:" %><br />
+    <%= f.label :location_id, "Choose existing location:" %> 
     <%= f.collection_select(:location_id ,@locations,:id, :name,{:prompt =>"Select Location"}) %>
   </div>
   <div class="field">
-    <%= f.label :start_time %><br />
+    <%= f.label :start_time %> 
     <%= f.time_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :end_time %><br />
+    <%= f.label :end_time %> 
     <%= f.time_select :end_time %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %> 
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :rsvp_date %><br />
+    <%= f.label :rsvp_date %> 
     <%= f.date_select :rsvp_date %>
   </div>
   <div class="actions">
