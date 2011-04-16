@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.xml
   def index
-    @guests = current_host.guests
+    @guests = current_host.guests.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +41,7 @@ class GuestsController < ApplicationController
   # POST /guests
   # POST /guests.xml
   def create
+    params[:guest][:host_id] = current_host.id
     @guest = Guest.new(params[:guest])
 
     respond_to do |format|
@@ -58,6 +59,7 @@ class GuestsController < ApplicationController
   # PUT /guests/1.xml
   def update
     @guest = Guest.find(params[:id])
+	@guest.host_id = current_host.id
 
     respond_to do |format|
       if @guest.update_attributes(params[:guest])

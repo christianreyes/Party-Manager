@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :party_id %><br />
-    <%= f.text_field :party_id %>
+    <%= f.collection_select(:party_id ,@parties,:id, :name,{:prompt =>"Select Party"})%>
   </div>
   <div class="field">
     <%= f.label :guest_id %><br />
-    <%= f.text_field :guest_id %>
+    <%= f.collection_select(:guest_id ,@guests,:id, :name,{:prompt =>"Select Guest"})%>
   </div>
   <div class="field">
     <%= f.label :invite_code %><br />

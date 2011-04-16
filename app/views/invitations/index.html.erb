@@ -1,6 +1,6 @@
 <h1>Listing invitations</h1>
 
-<table>
+<table class="minimal">
   <tr>
     <th>Party</th>
     <th>Guest</th>
@@ -14,8 +14,8 @@
 
 <% @invitations.each do |invitation| %>
   <tr>
-    <td><%= invitation.party_id %></td>
-    <td><%= invitation.guest_id %></td>
+    <td><%= invitation.party.name %></td>
+    <td><%= invitation.guest.name %></td>
     <td><%= invitation.invite_code %></td>
     <td><%= invitation.expected_attendees %></td>
     <td><%= invitation.actual_attendees %></td>

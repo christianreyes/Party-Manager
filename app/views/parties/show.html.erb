@@ -1,50 +1,64 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Party type:</b>
-  <%= @party.party_type_id %>
-</p>
-
-<p>
-  <b>Host:</b>
-  <%= @party.host_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @party.name %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @party.date %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @party.location_id %>
-</p>
-
-<p>
-  <b>Start time:</b>
-  <%= @party.start_time %>
-</p>
-
-<p>
-  <b>End time:</b>
-  <%= @party.end_time %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @party.description %>
-</p>
-
-<p>
-  <b>Rsvp date:</b>
-  <%= @party.rsvp_date %>
-</p>
-
-
+<h1 class="horizontal"><%= @party.name %></h1>
+<div id="party_details_map">
+	<div id="party_detail_container">
+		<p>
+		  <b>Party type:</b>
+		  <%= @party.party_type_id %>
+		</p>
+		<p>
+		  <b>Date:</b>
+		  <%= date @party.date %>
+		</p>
+		<p>
+		  <b>Location:</b>
+		  <%= @party.location_id %>
+		  <span class="address">5032 Forbes Ave, Pittsburgh, PA 15289</span>
+		</p>
+		<p>
+		  <b>Time:</b><%= time @party.start_time %> - <%= time @party.end_time %>
+		</p>
+		<p>
+		  <b>Rsvp date:</b>
+		  <%= date @party.rsvp_date %>
+		</p>
+		<p>
+		  <b>Description:</b>
+		  <%= @party.description %>
+		</p>
+	</div>
+	<div id="map_container">
+		<div id="map">
+			<span>I AM A MAP!</span>
+		</div>
+	</div>
+</div>
+<h2 class="guest_list horizontal">Guest List</h2>
+<% if @invitations.length > 0 %>
+  <table class="minimal">
+  	<thead>
+  		<tr>
+  			<th>Name</th>
+  			<th>Email</th>
+  			<th>Status</th>
+  			<th># Expected</th>
+  			<th># Confimed</th>
+			<th>Actions</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<% for invite in @invitations %>
+    	<tr>
+    		<td><%= link_to invite.guest.name , guest_path(invite.guest) %> </td>
+    		<td><%= invite.guest.email %></td>
+    		<td><%= link_to "Pending", invitation_path(invite)      %> </td>
+    		<td><%= invite.expected_attendees %></td>
+    		<td><%= invite.actual_attendees %>  </td>
+			<td><%= link_to 'Remove Invitation', invite, :confirm => 'Are you sure?', :method => :delete %></td>
+    	</tr>
+  		<% end%>
+  	</tbody>
+  </table>
+<% end%>
 <%= link_to 'Edit', edit_party_path(@party) %> |
 <%= link_to 'Back', parties_path %>

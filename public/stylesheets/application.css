@@ -120,20 +120,12 @@ body{
   filter: progid:DXImageTransform.Microsoft.dropShadow(color=#222, offX=7, offY=7, positive=true);
 }
 
-#party_info {
-  line-height: 110%;
-}
-
 #map_container{
   display: inline;
   height: 360px;
   width: 460px;
   text-align: center;
   float: right;
-}
-
-a img {
-  border: none;
 }
 
 a {
@@ -146,9 +138,9 @@ a {
   overflow: hidden;
 }
 
-.horizontal_title {
-	background-color: #FFDF87;
-	margin: 20px 0px 20px;
+.horizontal {
+	background-color: #D3FFDC;
+	margin: 20px 0px;
 	padding: 10px 8px;
 	text-align: center;
 	font-weight: bold;
@@ -156,56 +148,82 @@ a {
 	border-bottom: 1px solid black;
 }
 
-.horizontal_title span {
+.horizontal span {
 	font-weight: normal;
+}
+
+h1.horizontal {
+	font-size: 1.2em;
+}
+
+h2.horizontal {
+	font-size: 1.1em;
+}
+
+#party_detail_container {
+  margin: 0;
+  width: 350px;
+  float: left;
+}
+
+#party_detail_container b{
+	width: 100px;
+	display: inline-block;
+}
+
+span.address{
+	display: inline-block;
+	width: 230px;
+	white-space:normal; 
+	vertical-align: top;
+}
+
+#map_container {
+	width: 430px;
+	float: right;
+	padding-top: 1em;
+	background-color: #EEE;
+}
+
+.guest_list {
+	margin-top: 440px;
+	clear:both;
 }
 
 /* -----  Tables  ---- 
 	Inspired/modified: http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
 */
 
-.party_info_table{
-	vertical-align: text-top;
-	text-align: left;
-	border-spacing: 1em;
+table.minimal {
+  font-size: .8em;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  margin: 14px 0px;
+  vertical-align: middle;
 }
 
-.party_info_table th {
-	width: 100px;
+table.minimal th {
+  color: #1E2324;
+  font-size: 1.2em;
+  padding: 10px 8px;
+  border-bottom: 2px solid #1A1F1F;
+  text-align: left;
 }
 
-.minimal_table
-{
-	/*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	 font-size: 12px; */
-	background: #fff; 
-	/* margin: 45px; */
-	width: 100%;
-	border-collapse: collapse;
-	text-align: left;
-	vertical-align: middle;
+table.minimal td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #A19F9A;
 }
 
-.minimal_table th
-{
-	/*
-	font-size: 14px;
-	font-weight: normal;
-	 color: #039;
-	 */
-	text-align: center;
-	padding: 10px 8px;
-	border-bottom: 2px solid black;
-}
-.minimal_table td
-{
-	padding: 9px 8px 0px 8px;
+table.minimal img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.minimal_table tbody tr:hover td
-{
-	color: #009;
-	background-color: #D3D9F5;
+table.minimal tr:hover td{
+	color: #004;
+	background-color: #DBE1E8;
 }
 
 #footer_container{

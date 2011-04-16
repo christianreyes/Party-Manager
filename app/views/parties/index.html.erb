@@ -1,35 +1,47 @@
-<h1>Listing parties</h1>
+<h2 class="horizontal">Upcoming Parties</h2>
 
-<table>
+<table class="minimal">
   <tr>
-    <th>Party type</th>
-    <th>Host</th>
     <th>Name</th>
     <th>Date</th>
     <th>Location</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Description</th>
-    <th>Rsvp date</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Time</th>
+	<th># Expected</th>
+	<th># Confirmed</th>
   </tr>
 
-<% @parties.each do |party| %>
+<% @upcoming_parties.each do |party| %>
   <tr>
-    <td><%= party.party_type_id %></td>
-    <td><%= party.host_id %></td>
-    <td><%= party.name %></td>
-    <td><%= party.date %></td>
-    <td><%= party.location_id %></td>
-    <td><%= party.start_time %></td>
-    <td><%= party.end_time %></td>
-    <td><%= party.description %></td>
-    <td><%= party.rsvp_date %></td>
-    <td><%= link_to 'Show', party %></td>
-    <td><%= link_to 'Edit', edit_party_path(party) %></td>
-    <td><%= link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to party.name, party %></td>
+    <td><%= date party.date %></td>
+    <td><%= party.location.name if party.location %></td>
+    <td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+	<td><%= party.number_expected_guests %></td>
+	<td><%= party.number_actual_guests %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2 class="horizontal">Past Parties</h2>
+
+<table class="minimal">
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Time</th>
+	<th># Expected</th>
+	<th># Confirmed</th>
+  </tr>
+
+<% @past_parties.each do |party| %>
+  <tr>
+    <td><%= link_to party.name, party %></td>
+    <td><%= date party.date %></td>
+    <td><%= party.location.name if party.location  %></td>
+    <td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+	<td><%= party.number_expected_guests %></td>
+	<td><%= party.number_actual_guests %></td>
   </tr>
 <% end %>
 </table>

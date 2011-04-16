@@ -1,21 +1,17 @@
 <h1>Listing guests</h1>
 
-<table>
+<table class="minimal">
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Host</th>
     <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3">Actions</th>
   </tr>
 
 <% @guests.each do |guest| %>
   <tr>
     <td><%= guest.name %></td>
     <td><%= guest.email %></td>
-    <td><%= guest.host_id %></td>
     <td><%= guest.notes %></td>
     <td><%= link_to 'Show', guest %></td>
     <td><%= link_to 'Edit', edit_guest_path(guest) %></td>

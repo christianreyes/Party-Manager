@@ -3,7 +3,8 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.xml
   def index
-    @parties = current_host.parties
+    @upcoming_parties = current_host.parties.upcoming
+	@past_parties = current_host.parties.past
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class PartiesController < ApplicationController
   # GET /parties/1.xml
   def show
     @party = Party.find(params[:id])
+	@invitations = @party.invitations.all
 
     respond_to do |format|
       format.html # show.html.erb

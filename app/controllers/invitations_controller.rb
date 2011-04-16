@@ -26,6 +26,8 @@ class InvitationsController < ApplicationController
   # GET /invitations/new.xml
   def new
     @invitation = Invitation.new
+	@parties = current_host.parties.all
+	@guests = current_host.guests.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +38,8 @@ class InvitationsController < ApplicationController
   # GET /invitations/1/edit
   def edit
     @invitation = Invitation.find(params[:id])
+	@parties = current_host.parties
+	@guests = current_host.guests
   end
 
   # POST /invitations
