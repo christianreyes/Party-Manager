@@ -1,10 +1,5 @@
 <%= form_for(@location) do |f| %>
   <%= render :partial => "partials/errors", :locals => {:target => @location}  %>
-
-  <div class="field">
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
-  </div>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -12,14 +7,6 @@
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
   </div>
   <div class="actions">
     <%= f.submit %>

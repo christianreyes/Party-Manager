@@ -1,30 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1 class="horizontal"><%= @location.name %></h1>
 
-<p>
-  <b>Host:</b>
-  <%= @location.host_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @location.name %>
-</p>
-
+<div id="location_show"
 <p>
   <b>Address:</b>
   <%= @location.address %>
 </p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @location.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @location.longitude %>
-</p>
-
+<div id="map">
+	<%= image_tag(@location.google_map_link, :size => "430x360") if @location %>
+</div>
+</div>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
