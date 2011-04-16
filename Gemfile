@@ -8,6 +8,7 @@ gem 'heroku'
 gem 'meta_where'
 gem 'mail'
 gem 'geokit'
+gem 'date_validator'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do

@@ -28,6 +28,7 @@ class PartiesController < ApplicationController
   # GET /parties/new.xml
   def new
     @party = Party.new
+	@locations = current_host.locations
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +39,7 @@ class PartiesController < ApplicationController
   # GET /parties/1/edit
   def edit
     @party = Party.find(params[:id])
+	@locations = current_host.locations
   end
 
   # POST /parties
