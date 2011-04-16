@@ -36,7 +36,7 @@ namespace :db do
 		else
 			p.date = (-rand(30)).days.from_now
 		end
-		p.start_time = p.date + rand(10).hours
+		p.start_time = rand(10).hours
 		p.end_time = p.start_time + rand(5).hours
 		p.rsvp_date = p.date - rand(30).days
 		p.description = Faker::Company.bs * 3
