@@ -47,7 +47,12 @@ class PartiesController < ApplicationController
   def create
     params[:party][:host_id] = current_host.id
     @party = Party.new(params[:party])
-
+	if params[:new_location_name] && params[:new_location_address]
+		l = Location.new( :name => params[:new_location_name], :address => params[:new_location_address] )
+		l.host_id = current_host.id
+		l.save!
+		@party.location_id = l.id
+	end
     respond_to do |format|
       if @party.save
         format.html { redirect_to(@party, :notice => 'Party was successfully created.') }
@@ -64,9 +69,17 @@ class PartiesController < ApplicationController
   def update
     @party = Party.find(params[:id])
 	params[:party][:host_id] = current_host.id
-
+	@locations = current_host.locations
+	
+	if params[:new_location_name] && params[:new_location_address]
+		l = Location.new( :name => params[:new_location_name], :address => params[:new_location_address] )
+		l.host_id = current_host.id
+		l.save!
+		@party.location_id = l.id
+	end
+	
     respond_to do |format|
-      if @party.update_attributes(params[:party])
+      if @party.update_attributes(@party)
         format.html { redirect_to(@party, :notice => 'Party was successfully updated.') }
         format.xml  { head :ok }
       else

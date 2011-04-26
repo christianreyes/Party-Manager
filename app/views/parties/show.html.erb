@@ -1,29 +1,33 @@
+<% if @party.location.address %>
+	<%= render :partial => "partials/gmap", :locals => {:latitude => @party.location.latitude,:longitude => 
+												@party.location.longitude }%> 
+<% end %>
+
 <h1 class="horizontal"><%= @party.name %></h1>
 <div id="party_details_map">
 	<div id="party_detail_container">
-		<p>
-		  <b>Date:</b>
-		  <%= date @party.date %>
-		</p>
-		<p>
-		  <b>Location:</b>
-		  <span class="address">5032 Forbes Ave, Pittsburgh, PA 15289</span>
-		</p>
-		<p>
-		  <b>Time:</b><%= time @party.start_time %> - <%= time @party.end_time %>
-		</p>
-		<p>
-		  <b>Rsvp date:</b>
-		  <%= date @party.rsvp_date %>
-		</p>
-		<p>
-		  <b>Description:</b>
-		  <%= @party.description %>
-		</p>
+		<table class="details">
+			<tr>
+				<td>Date & Time:</td>
+				<td><%= date @party.date %> &nbsp <%= time @party.start_time %> - <%= time @party.end_time %></td>
+			</tr>
+			<% if @party.location %>
+			<tr>
+				<td>Location:</td>
+				<td><%= @party.location.name %> - <a id="address_link" href="#map_canvas"><%= @party.location.address %> <span id="google_maps_icon" </span></a></td>
+			</tr>
+			<% end %>
+			<tr>
+				<td>Description:</td>
+				<td><%= @party.description %></td>
+			</tr>
+			<tr>
+				<td>RSVP Date:</td>
+				<td><%= date @party.rsvp_date %></td>
+			</tr>
+		</table>
 	</div>
-	<div id="map_container">
-		<%= image_tag(@party.location.google_map_link, :size => "430x360") if @party.location %>
-	</div>
+	
 </div>
 <h2 class="guest_list horizontal">Guest List</h2>
 <% if @invitations.length > 0 %>
@@ -56,4 +60,8 @@
 <%= link_to 'Back', parties_path %> |
 <%= link_to "Edit", edit_party_path(@party) %> |
 <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %>
+<% if @party.location %>
+		<div id="map_canvas" class="party_show">
+		</div>
+	<% end %>
 

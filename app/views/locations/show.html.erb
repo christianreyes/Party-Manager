@@ -1,3 +1,8 @@
+<% if @location.address %>
+	<%= render :partial => "partials/gmap", :locals => {:latitude => @location.latitude,:longitude => 
+												@location.longitude }%> 
+<% end %>
+
 <h1 class="horizontal"><%= @location.name %></h1>
 
 <div id="location_show"
@@ -5,8 +10,8 @@
   <b>Address:</b>
   <%= @location.address %>
 </p>
-<div id="map">
-	<%= image_tag(@location.google_map_link, :size => "430x360") if @location %>
+<div id="map_canvas">
+
 </div>
 </div>
 

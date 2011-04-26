@@ -142,16 +142,26 @@ a:hover {
   text-align:center;
 }
 
-#map_container{
-  display: inline;
+#map_canvas{
+  display: inline-block;
   width: 430px;
   height: 360px;
   text-align: center;
-  float: right;
   background-color: #EEE;
+  border: 1px solid gray;
 }
 
+#map_canvas.party_show{
+	display: none;
+}
 
+#map_canvas.visible{
+	display: inline-block;
+}
+
+#map_canvas.bw {
+  background-image: url('../images/google-map-bw.jpg');
+}
 
 .clear {
   clear: both;
@@ -181,28 +191,36 @@ h2.horizontal {
 	font-size: 1.1em;
 }
 
+table.details  tr{
+	vertical-align:text-top;
+}
+
+table.details td{
+	padding: 10px;
+}
+
+table.details tr td:first-child{
+	padding-left: 0;
+	color: black;  
+    font-weight: 700;
+	width: 100px;
+}
+
+#google_maps_icon {
+	background: transparent url('../images/google_maps_icon.png') top left;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: center;
+}
+
+/*
 #party_detail_container {
   margin: 0;
   width: 350px;
   float: left;
 }
-
-#party_detail_container b{
-	width: 100px;
-	display: inline-block;
-}
-
-span.address{
-	display: inline-block;
-	width: 230px;
-	white-space:normal; 
-	vertical-align: top;
-}
-
-.guest_list {
-	margin-top: 440px;
-	clear:both;
-}
+*/
 
 /* -----  Tables  ---- 
 	Inspired/modified: http://www.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
@@ -242,7 +260,6 @@ table.minimal tr:hover td{
 
 #footer_container{
   height: 30px;
-  width: 800px;
   margin: 0 auto;
 }
 
