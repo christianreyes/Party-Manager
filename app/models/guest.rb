@@ -3,5 +3,7 @@ class Guest < ActiveRecord::Base
 	has_many :invitations, :dependent => :destroy
 	has_many :parties, :through => :invitations
 	
+	validates_uniqueness_of :name
+	
 	scope :all, order(:name.asc)
 end

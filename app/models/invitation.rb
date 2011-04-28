@@ -3,6 +3,8 @@ class Invitation < ActiveRecord::Base
 	belongs_to :guest
 	has_many :gifts, :dependent => :destroy
 	
+	accepts_nested_attributes_for :guest
+	
 	before_create :generate_invite_code
 	
 	scope :by_invite, lambda {|i| where(:invite_code >> i)}

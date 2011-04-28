@@ -88,6 +88,9 @@ GEM
       activerecord (~> 3.0)
       activesupport (~> 3.0)
       ruby-graphviz (~> 0.9.18)
+    rails3-jquery-autocomplete (0.6.6)
+      rails (~> 3.0.0)
+      yajl-ruby
     railties (3.0.7)
       actionpack (= 3.0.7)
       activesupport (= 3.0.7)
@@ -107,6 +110,7 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (0.3.26)
     will_paginate (2.3.15)
+    yajl-ruby (0.7.8)
 
 PLATFORMS
   ruby
@@ -127,6 +131,7 @@ DEPENDENCIES
   populator
   rails (= 3.0.7)
   rails-erd
+  rails3-jquery-autocomplete
   shoulda
   sqlite3-ruby
   will_paginate

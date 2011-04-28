@@ -8,6 +8,10 @@
     <%= f.collection_select(:party_id ,@parties,:id, :name,{:prompt =>"Select Party"})%>
   </div>
   <div class="field">
+	<label for="guest_name">Guest:</label>
+	<%= text_field_tag :guest_name %>
+  </div>
+  <div class="field">
     <%= f.label :guest_id %>
     <%= f.collection_select(:guest_id ,@guests,:id, :name,{:prompt =>"Select Guest"})%>
   </div>

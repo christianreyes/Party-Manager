@@ -6,11 +6,17 @@ $(document).ready(function() {
 	
 	$( "#accordion" ).accordion();
 	
+	$("a#address_link").click(function () {
+	  //google.maps.event.trigger(map, "resize");
+	  //map.setCenter(map.getCenter());
+      $("#map_canvas").slideToggle();
+    });
+	
 	// Load dialog on click
 	/*$('#address_link').click(function (e) {
 		e.preventDefault();
 		$('a#map_canvas').css('display', 'inline-block');
-		$('a#address_link').fancybox();
+		$('a#address_link').fancybox();  
 		//$('#map_canvas').modal();
 		google.maps.event.trigger(map, "resize");
 		map.setCenter(map.getCenter());

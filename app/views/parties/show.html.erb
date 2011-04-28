@@ -1,4 +1,4 @@
-<% if @party.location.address %>
+<% if @party.location && @party.location.longitude %>
 	<%= render :partial => "partials/gmap", :locals => {:latitude => @party.location.latitude,:longitude => 
 												@party.location.longitude }%> 
 <% end %>
@@ -14,8 +14,10 @@
 			<% if @party.location %>
 			<tr>
 				<td>Location:</td>
-				<td><%= @party.location.name %> - <a id="address_link" href="#map_canvas"><%= @party.location.address %> <span id="google_maps_icon" </span></a></td>
+				<td><%= @party.location.name %> - <a id="address_link" href="#"><%= @party.location.address %> <span id="google_maps_icon" </span></a></td>
 			</tr>
+			<div id="map_canvas" class="party_show">
+			</div>
 			<% end %>
 			<tr>
 				<td>Description:</td>
@@ -60,8 +62,3 @@
 <%= link_to 'Back', parties_path %> |
 <%= link_to "Edit", edit_party_path(@party) %> |
 <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %>
-<% if @party.location %>
-		<div id="map_canvas" class="party_show">
-		</div>
-	<% end %>
-
