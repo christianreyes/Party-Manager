@@ -1,0 +1,15 @@
+<p>Dear <%= @invite.guest.name %>,</p>
+
+<p>We are informing you that <b><%= @invite.party.host.name %>'s</b> party "<b><%=@invite.party.name%></b>" has been updated.</p>
+
+<%= ("<p>Details: " + @invite.party.description + "</p>" ).html_safe if @invite.party.description%>
+
+<p>The party is taking place on <b><%= date_str @invite.party.date %></b> from <b><%= time_str @invite.party.start_time %></b> to <b><%= time_str @invite.party.end_time  %></b>.</p>
+
+<% if @invite.party.location %>
+<p>The party is located at <b><%= @invite.party.location.name %>: <%= @invite.party.location.address %></b></p>
+<% end %>
+
+<p><%= @invite.party.host.name %> is anticipating <b><%= pluralize(@invite.expected_attendees, 'guest') %></b> with you. Please RSVP or view the party details <% if @invite.party.rsvp_date %> by <b><%= date_str @invite.party.rsvp_date%></b> <% end %> at <b><%= url_for @invite.invite_url%></b>.</p>
+
+<p>See you at the party!</p>

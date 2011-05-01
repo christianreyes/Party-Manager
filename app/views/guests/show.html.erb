@@ -24,9 +24,9 @@
 <% @invitations.each do |invite| %>
   <tr>
     <td><%= link_to invite.party.name, invite.party %></td>
-    <td><%= date invite.party.date %></td>
+    <td><%= date_str invite.party.date %></td>
     <td><%= invite.party.location.name if invite.party.location %></td>
-    <td><%= "#{time invite.party.start_time} - #{time invite.party.end_time}" %></td>
+    <td><%= "#{time_str invite.party.start_time} - #{time_str invite.party.end_time}" %></td>
 	<td><%= invite.expected_attendees %></td>
 	<td><%= invite.actual_attendees %></td>
   </tr>

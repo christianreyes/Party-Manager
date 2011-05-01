@@ -76,12 +76,16 @@ class PartiesController < ApplicationController
 	if params[:new_location_name] != "" && params[:new_location_address] !=""
 		l = Location.new( :name => params[:new_location_name], :address => params[:new_location_address] )
 		l.host_id = current_host.id
+		l.save!
 		params[:party][:location_id] = l.id
 	end
 
 	
     respond_to do |format|
       if @party.update_attributes(params[:party])
+		@party.invitations.each do |i|
+			PartyMailer.party_update(i).deliver
+		end
         format.html { redirect_to(@party, :notice => 'Party was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -95,10 +99,13 @@ class PartiesController < ApplicationController
   # DELETE /parties/1.xml
   def destroy
     @party = Party.find(params[:id])
+	@party.invitations.each do |i|
+		PartyMailer.party_delete(i).deliver
+	end
     @party.destroy
 
     respond_to do |format|
-      format.html { redirect_to(parties_url) }
+      format.html { redirect_to(parties_url, :notice => 'Party was successfully deleted and all guests notified.') }
       format.xml  { head :ok }
     end
   end

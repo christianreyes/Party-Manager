@@ -13,4 +13,14 @@ class PartyMailer < ActionMailer::Base
     @invite = invite 
     mail(:to => invite.guest.email, :subject => "Party Invitation")  
   end 
+  
+  def party_delete(invite)  
+    @invite = invite 
+    mail(:to => invite.guest.email, :subject => "Party Cancelled")  
+  end 
+  
+  def party_update(invite)  
+    @invite = invite 
+    mail(:to => invite.guest.email, :subject => "Party Updated")  
+  end
 end

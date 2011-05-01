@@ -1,0 +1,7 @@
+<p>Dear <%= @invite.guest.name %>,</p>
+
+<p>We are informing you that <b><%= @invite.party.host.name %>'s</b> party "<b><%=@invite.party.name%></b>" has been cancelled.</p>
+
+<p>The party was taking place on <b><%= date_str @invite.party.date %></b> from <b><%= time_str @invite.party.start_time %></b> to <b><%= time_str @invite.party.end_time  %></b>.</p>
+
+<p>We hope to see you at the next party!</p>
