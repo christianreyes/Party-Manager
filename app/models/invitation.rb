@@ -9,7 +9,9 @@ class Invitation < ActiveRecord::Base
 	
 	scope :by_invite_code, lambda {|i| where(:invite_code >> i)}
     
-    validates_presence_of :party_id, :guest_id
+	validates :party_id, :presence => true
+	validates :guest_id, :presence => true
+	validates :expected_attendees, :presence => true
 	
     def invite_url
     	return "/rsvp/" + invite_code

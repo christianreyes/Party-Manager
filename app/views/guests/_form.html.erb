@@ -2,11 +2,11 @@
   <%= render :partial => "partials/errors", :locals => {:target => @guest}  %>
 
   <div class="field">
-    <%= f.label :name %> 
+	<%= f.label :name, 'Name: <span class="required">*</span>'.html_safe %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %> 
+    <%= f.label :email , 'Email: <span class="required">*</span>'.html_safe%> 
     <%= f.text_field :email %>
   </div>
   <div class="field">

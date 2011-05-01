@@ -2,11 +2,11 @@
   <%= render :partial => "partials/errors", :locals => {:target => @party}  %>
 
   <div class="field">
-    <%= f.label :name %> 
+    <%= f.label :name, 'Name: <span class="required">*</span>'.html_safe %> 
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :date %> 
+    <%= f.label :date, 'Date: <span class="required">*</span>'.html_safe %> 
     <%= f.date_select :date %>
   </div>
   <div class="field">
@@ -22,16 +22,16 @@
 	<%= text_field_tag :new_location_address, params[:new_location_address] %>
   </div>
   <div class="field">
-    <%= f.label :start_time %> 
+	<%= f.label :start_time, 'Start Time: <span class="required">*</span>'.html_safe %> 
     <%= f.time_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :end_time %> 
+	<%= f.label :end_time, 'End Time: <span class="required">*</span>'.html_safe %> 
     <%= f.time_select :end_time %>
   </div>
   <div class="field">
     <%= f.label :description %> 
-    <%= f.text_area :description %>
+    <%= f.text_area :description %>l
   </div>
   <div class="field">
     <%= f.label :rsvp_date %> 

@@ -374,3 +374,8 @@ table.rsvp{
 table.rsvp td{
 	width: 50%;
 }
+
+span.required {
+	color: red;
+	margin: 0 3px;
+}

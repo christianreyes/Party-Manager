@@ -4,15 +4,15 @@
   <%= render :partial => "partials/errors", :locals => {:target => @invitation}  %>
 
   <div class="field">
-    <%= f.label :party_id %>
+    <%= f.label :party_id, 'Party: <span class="required">*</span>'.html_safe %>
     <%= f.collection_select(:party_id ,@parties,:id, :name,{:prompt =>"Select Party"})%>
   </div>
   <div class="field">
-    <%= f.label :guest_id %>
+    <%= f.label :guest_id, 'Guest: <span class="required">*</span>'.html_safe %>
     <%= f.collection_select(:guest_id ,@guests,:id, :name,{:prompt =>"Select Guest"})%>
   </div>
   <div class="field">
-    <%= f.label :expected_attendees %>
+	<%= f.label :expected_attendees, 'Expected Attendees: <span class="required">*</span>'.html_safe %>
     <%= f.text_field :expected_attendees %>
   </div>
   <div class="actions">

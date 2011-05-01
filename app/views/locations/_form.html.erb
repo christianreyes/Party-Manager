@@ -1,11 +1,11 @@
 <%= form_for(@location) do |f| %>
   <%= render :partial => "partials/errors", :locals => {:target => @location}  %>
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, 'Name: <span class="required">*</span>'.html_safe %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %>
+    <%= f.label :address, 'Address: <span class="required">*</span>'.html_safe %>
     <%= f.text_field :address %>
   </div>
   <div class="actions">

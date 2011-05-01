@@ -46,8 +46,10 @@ class PartiesController < ApplicationController
   # POST /parties.xml
   def create
     params[:party][:host_id] = current_host.id
+	@locations = current_host.locations
+
     @party = Party.new(params[:party])
-	if params[:new_location_name] && params[:new_location_address]
+	if params[:new_location_name] != "" && params[:new_location_address] != ""
 		l = Location.new( :name => params[:new_location_name], :address => params[:new_location_address] )
 		l.host_id = current_host.id
 		l.save!

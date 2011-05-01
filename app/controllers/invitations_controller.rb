@@ -46,6 +46,8 @@ class InvitationsController < ApplicationController
   # POST /invitations.xml
   def create
     @invitation = Invitation.new(params[:invitation])
+	@parties = current_host.parties.all
+	@guests = current_host.guests.all
 
     respond_to do |format|
       if @invitation.save

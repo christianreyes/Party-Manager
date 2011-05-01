@@ -4,7 +4,8 @@ class Location < ActiveRecord::Base
 	
 	before_save :save_coordinates
 	
-	validates_presence_of :name, :address
+	validates :name, :presence => true
+	validates :address, :presence => true
 	
 	def save_coordinates
 		coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{address}"

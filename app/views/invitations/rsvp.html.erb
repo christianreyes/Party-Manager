@@ -18,7 +18,7 @@
 			<p><%= @invitation.expected_attendees %></p>
 		</td>
 		<td>
-			<%= f.label :actual_attendees %>
+			<%= f.label :actual_attendees, 'Actual Attendees: <span class="required">*</span>'.html_safe %>
 			<%= f.text_field :actual_attendees %>
 		</td>
 	</tr>
