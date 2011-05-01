@@ -51,6 +51,7 @@ class InvitationsController < ApplicationController
 
     respond_to do |format|
       if @invitation.save
+		PartyMailer.email_invitation(@invitation).deliver  
         format.html { redirect_to(@invitation, :notice => 'Invitation was successfully created.') }
         format.xml  { render :xml => @invitation, :status => :created, :location => @invitation }
       else

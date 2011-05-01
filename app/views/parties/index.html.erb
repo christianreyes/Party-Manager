@@ -16,9 +16,9 @@
 	<% @upcoming_parties.each do |party| %>
 	  <tr>
 		<td><%= link_to party.name, party %></td>
-		<td><%= date party.date %></td>
+		<td><%= date_str party.date %></td>
 		<td><%= party.location.name if party.location %></td>
-		<td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+		<td><%= "#{time_str party.start_time} - #{time_str party.end_time}" %></td>
 		<td><%= party.number_expected_guests %></td>
 		<td><%= party.number_actual_guests %></td>
 	  </tr>
@@ -41,9 +41,9 @@
 	<% @past_parties.each do |party| %>
 	  <tr>
 		<td><%= link_to party.name, party %></td>
-		<td><%= date party.date %></td>
+		<td><%= date_str party.date %></td>
 		<td><%= party.location.name if party.location  %></td>
-		<td><%= "#{time party.start_time} - #{time party.end_time}" %></td>
+		<td><%= "#{time_str party.start_time} - #{time_str party.end_time}" %></td>
 		<td><%= party.number_expected_guests %></td>
 		<td><%= party.number_actual_guests %></td>
 	  </tr>

@@ -26,6 +26,7 @@ a:hover {
   padding: 0;
   background-image: url('../images/party-manager.png');
   background-repeat: no-repeat;
+  text-decoration: none;
   height: 75px;
   background-position: -12px top;
   text-indent: -1000em;
@@ -46,6 +47,7 @@ a:hover {
 
 #header_container a {
   color: white;
+  text-decoration: none;
 }
 
 #menu_container{

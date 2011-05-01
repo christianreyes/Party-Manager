@@ -11,7 +11,7 @@
 		<table class="details">
 			<tr>
 				<td>Date & Time:</td>
-				<td><%= date party.date %> &nbsp <%= time party.start_time %> - <%= time party.end_time %></td>
+				<td><%= date_str party.date %> &nbsp <%= time_str party.start_time %> - <%= time_str party.end_time %></td>
 			</tr>
 			<% if party.location %>
 			<tr>
@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<td>RSVP Date:</td>
-				<td><%= date party.rsvp_date %></td>
+				<td><%= date_str party.rsvp_date %></td>
 			</tr>
 		</table>
 	</div>
