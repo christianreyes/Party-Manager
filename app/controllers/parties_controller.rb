@@ -5,11 +5,6 @@ class PartiesController < ApplicationController
   def index
     @upcoming_parties = current_host.parties.upcoming
 	@past_parties = current_host.parties.past
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @parties }
-    end
   end
 
   # GET /parties/1
@@ -17,11 +12,6 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
 	@invitations = @party.invitations.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @party }
-    end
   end
 
   # GET /parties/new
@@ -58,10 +48,8 @@ class PartiesController < ApplicationController
     respond_to do |format|
       if @party.save
         format.html { redirect_to(@party, :notice => 'Party was successfully created.') }
-        format.xml  { render :xml => @party, :status => :created, :location => @party }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @party.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -87,10 +75,8 @@ class PartiesController < ApplicationController
 			PartyMailer.party_update(i).deliver
 		end
         format.html { redirect_to(@party, :notice => 'Party was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @party.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -106,7 +92,6 @@ class PartiesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(parties_url, :notice => 'Party was successfully deleted and all guests notified.') }
-      format.xml  { head :ok }
     end
   end
 end
