@@ -21,21 +21,21 @@
       <img src="./assets/0.4.4/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2011-05-01T09:28:29-04:00">2011-05-01T09:28:29-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2011-05-01T09:45:09-04:00">2011-05-01T09:45:09-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="red">40.88%</span>)
+    (<span class="red">41.11%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
     <b>433</b> relevant lines. 
-    <span class="green"><b>177</b> lines covered</span> and
-    <span class="red"><b>256</b> lines missed </span>
+    <span class="green"><b>178</b> lines covered</span> and
+    <span class="red"><b>255</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -277,11 +277,11 @@
       
       <tr>
         <td><a href="#54bf13033e2ff8fc53d20908220e40ea514d7f3d" class="src_link" title="./app/models/party.rb">./app/models/party.rb</a></td>
-        <td class="yellow">83.33 %</td>
-        <td>29</td>
+        <td class="yellow">88.89 %</td>
+        <td>32</td>
         <td>18</td>
-        <td>15</td>
-        <td>3</td>
+        <td>16</td>
+        <td>2</td>
       </tr>
       
       <tr>
@@ -411,14 +411,14 @@
           <div class="file_list_container" id="Models">
   <h2>
     Models
-    (<span class="yellow">85.06%</span>)
+    (<span class="yellow">86.21%</span>)
   </h2>
   <a name="Models"></a>
   <div>
     <b>6</b> files in total.
     <b>87</b> relevant lines. 
-    <span class="green"><b>74</b> lines covered</span> and
-    <span class="red"><b>13</b> lines missed </span>
+    <span class="green"><b>75</b> lines covered</span> and
+    <span class="red"><b>12</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -480,11 +480,11 @@
       
       <tr>
         <td><a href="#54bf13033e2ff8fc53d20908220e40ea514d7f3d" class="src_link" title="./app/models/party.rb">./app/models/party.rb</a></td>
-        <td class="yellow">83.33 %</td>
-        <td>29</td>
+        <td class="yellow">88.89 %</td>
+        <td>32</td>
         <td>18</td>
-        <td>15</td>
-        <td>3</td>
+        <td>16</td>
+        <td>2</td>
       </tr>
       
     </tbody>
@@ -10759,7 +10759,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/models/party.rb</h3>
-        <h4><span class="yellow">83.33 %</span> covered</h4>
+        <h4><span class="yellow">88.89 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -10971,7 +10971,7 @@
         <pre>16</pre>
       </td>
       <td>
-        <pre>	validate :proper_time</pre>
+        <pre>	validates :date, :presence =&gt; true</pre>
       </td>
       <td class="hits">
         1
@@ -10979,15 +10979,15 @@
     </tr>
   
     
-    <tr class="never" >
+    <tr class="hit" data-hits="1">
       <td class="line_number">
         <pre>17</pre>
       </td>
       <td>
-        <pre>	</pre>
+        <pre>	validates :start_time, :presence =&gt; true</pre>
       </td>
       <td class="hits">
-        
+        1
       </td>
     </tr>
   
@@ -10997,7 +10997,7 @@
         <pre>18</pre>
       </td>
       <td>
-        <pre>	def proper_time</pre>
+        <pre>	validates :end_time, :presence =&gt; true</pre>
       </td>
       <td class="hits">
         1
@@ -11005,15 +11005,15 @@
     </tr>
   
     
-    <tr class="miss" data-hits="0">
+    <tr class="never" >
       <td class="line_number">
         <pre>19</pre>
       </td>
       <td>
-        <pre>		errors.add(:end_time, &quot; must be after start time&quot;) if end_time &lt;= start_time</pre>
+        <pre>	#validate :proper_time</pre>
       </td>
       <td class="hits">
-        0
+        
       </td>
     </tr>
   
@@ -11023,7 +11023,7 @@
         <pre>20</pre>
       </td>
       <td>
-        <pre>	end</pre>
+        <pre>	</pre>
       </td>
       <td class="hits">
         
@@ -11036,6 +11036,45 @@
         <pre>21</pre>
       </td>
       <td>
+        <pre>	#def proper_time</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>22</pre>
+      </td>
+      <td>
+        <pre>	#	errors.add(:end_time, &quot; must be after start time&quot;) if end_time &lt;= start_time</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>23</pre>
+      </td>
+      <td>
+        <pre>	#end</pre>
+      </td>
+      <td class="hits">
+        
+      </td>
+    </tr>
+  
+    
+    <tr class="never" >
+      <td class="line_number">
+        <pre>24</pre>
+      </td>
+      <td>
         <pre>	</pre>
       </td>
       <td class="hits">
@@ -11046,7 +11085,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>22</pre>
+        <pre>25</pre>
       </td>
       <td>
         <pre>	def number_expected_guests</pre>
@@ -11059,7 +11098,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>23</pre>
+        <pre>26</pre>
       </td>
       <td>
         <pre>		return self.guests.sum('expected_attendees')</pre>
@@ -11072,7 +11111,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>24</pre>
+        <pre>27</pre>
       </td>
       <td>
         <pre>	end</pre>
@@ -11085,7 +11124,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>25</pre>
+        <pre>28</pre>
       </td>
       <td>
         <pre>	</pre>
@@ -11098,7 +11137,7 @@
     
     <tr class="hit" data-hits="1">
       <td class="line_number">
-        <pre>26</pre>
+        <pre>29</pre>
       </td>
       <td>
         <pre>	def number_actual_guests</pre>
@@ -11111,7 +11150,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>27</pre>
+        <pre>30</pre>
       </td>
       <td>
         <pre>		return self.guests.sum('actual_attendees')</pre>
@@ -11124,7 +11163,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>28</pre>
+        <pre>31</pre>
       </td>
       <td>
         <pre>	end</pre>
@@ -11137,7 +11176,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>29</pre>
+        <pre>32</pre>
       </td>
       <td>
         <pre>end</pre>

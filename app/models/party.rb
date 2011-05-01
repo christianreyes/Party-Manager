@@ -13,11 +13,14 @@ class Party < ActiveRecord::Base
 	
 	#validates :date, :presence => true, :date => {:after => Proc.new { Date.yesterday } }
 	validates :name, :presence => true
-	validate :proper_time
+	validates :date, :presence => true
+	validates :start_time, :presence => true
+	validates :end_time, :presence => true
+	#validate :proper_time
 	
-	def proper_time
-		errors.add(:end_time, " must be after start time") if end_time <= start_time
-	end
+	#def proper_time
+	#	errors.add(:end_time, " must be after start time") if end_time <= start_time
+	#end
 	
 	def number_expected_guests
 		return self.guests.sum('expected_attendees')
