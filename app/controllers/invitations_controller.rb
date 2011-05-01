@@ -85,4 +85,16 @@ class InvitationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def rsvp
+	@invitation = Invitation.by_invite_code(params[:invite_code]).first
+	
+	respond_to do |format|
+      format.html # rsvp.html.erb
+	end
+  end
+  
+  def rsvp_create
+  
+  end
 end

@@ -191,6 +191,11 @@ h2.horizontal {
 	font-size: 1.1em;
 }
 
+.slide:hover {
+	background-color: #a4c8ab;
+	cursor: pointer;
+}
+
 table.details  tr{
 	vertical-align:text-top;
 }
@@ -338,7 +343,7 @@ form div.field {
 	margin: 10px 0;
 }
 
-form div.field label{  
+form label{  
     display: block;  
     color: black;  
     font-weight: 700;  
@@ -349,6 +354,7 @@ form input, form select{
 	padding: 6px;    
     font-size: 11px;
     border: 1px solid #cecece; 
+	margin: 16px 0 0 0;  
 }
 
 form input[type=text]{
@@ -360,3 +366,11 @@ form input[type=submit]:hover
 	background-color: #AAA;
     border: 1px solid #BBB; 
 }  
+
+table.rsvp{
+	width: 100%;
+}
+
+table.rsvp td{
+	width: 50%;
+}

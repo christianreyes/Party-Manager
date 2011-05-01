@@ -12,6 +12,12 @@ $(document).ready(function() {
       $("#map_canvas").slideToggle();
     });
 	
+	$(".slide").click(function() {
+	  $(this).siblings("table").slideToggle('slow');
+	});
+	
+	
+	
 	// Load dialog on click
 	/*$('#address_link').click(function (e) {
 		e.preventDefault();

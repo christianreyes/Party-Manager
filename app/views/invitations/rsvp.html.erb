@@ -1,0 +1,32 @@
+<h1 class="horizontal">RSVP for <%= @invitation.party.name %></h1>
+
+<%= form_for(@invitation) do |f| %>
+  <%= render :partial => "partials/errors", :locals => {:target => @invitation}  %>
+  <table class="rsvp">
+	<tr>
+		<td>
+			<%= f.label "Host Name" %>
+			<p><%= @invitation.party.host.name %></p>
+		</td>
+		<td>
+			<label for="guest_name">Guest:</label>
+			<p><%= @invitation.guest.name %></p>
+		</td>
+	<tr>
+		<td>
+			<%= f.label :expected_attendees %>
+			<p><%= @invitation.expected_attendees %></p>
+		</td>
+		<td>
+			<%= f.label :actual_attendees %>
+			<%= f.text_field :actual_attendees %>
+		</td>
+	</tr>
+  </table>
+  <div class="actions">
+	<%= f.submit "RSVP"%>
+  </div>
+<% end %>
+
+<%= render :partial => 'parties/party_show', :locals => {:party => @invitation.party, :show_party_name => true} %>
+<%= render :partial => 'parties/party_guest_list', :locals => {:invitations => @invitation.party.invitations} %>

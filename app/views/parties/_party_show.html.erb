@@ -1,0 +1,35 @@
+<% if party.location && party.location.longitude %>
+	<%= render :partial => "partials/gmap", :locals => {:latitude => party.location.latitude,:longitude => 
+												party.location.longitude }%> 
+<% end %>
+
+<% if show_party_name %>
+	<h1 class="horizontal"><%= party.name %></h1>
+<% end %>
+<div id="party_details_map">
+	<div id="party_detail_container">
+		<table class="details">
+			<tr>
+				<td>Date & Time:</td>
+				<td><%= date party.date %> &nbsp <%= time party.start_time %> - <%= time party.end_time %></td>
+			</tr>
+			<% if party.location %>
+			<tr>
+				<td>Location:</td>
+				<td><%= party.location.name %> - <a id="address_link" href="#"><%= party.location.address %> <span id="google_maps_icon" </span></a></td>
+			</tr>
+			<div id="map_canvas" class="party_show">
+			</div>
+			<% end %>
+			<tr>
+				<td>Description:</td>
+				<td><%= party.description %></td>
+			</tr>
+			<tr>
+				<td>RSVP Date:</td>
+				<td><%= date party.rsvp_date %></td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
