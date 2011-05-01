@@ -11,6 +11,7 @@ gem 'geokit'
 gem 'date_validator'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'rails3-jquery-autocomplete'
+gem 'simplecov'
 
 group :development do
   gem "rails-erd"
