@@ -1,11 +1,13 @@
 class Location < ActiveRecord::Base
 	belongs_to :host
-	has_many :parties
+	has_many :parties, :dependent => :nullify
 	
 	before_save :save_coordinates
 	
 	validates :name, :presence => true
 	validates :address, :presence => true
+	
+	scope :all, order(:name.asc)
 	
 	def save_coordinates
 		coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{address}"

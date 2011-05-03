@@ -21,12 +21,14 @@
 			<div id="map_canvas" class="party_show">
 			</div>
 			<% end %>
+			<% if party.description != "" %>
 			<tr>
 				<td>Description:</td>
 				<td><%= party.description %></td>
 			</tr>
+			<% end %>
 			<tr>
-				<td>RSVP Date:</td>
+				<td>RSVP Date:</td>s
 				<td><%= date_str party.rsvp_date %></td>
 			</tr>
 		</table>

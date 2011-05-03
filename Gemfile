@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'will_paginate'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'heroku'

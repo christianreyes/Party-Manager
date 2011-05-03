@@ -11,7 +11,7 @@
   <%= @guest.notes %>
 </p>
 <% end %>
-
+<% if @guest.parties.length > 0 %>
 <h2 class="horizontal">Parties Attended</h2>
 <table class="minimal">
   <tr>
@@ -34,6 +34,9 @@
   </tr>
 <% end %>
 </table>
+<% end %>
 
+<div class="link_actions">
 <%= link_to 'Edit', edit_guest_path(@guest) %> |
 <%= link_to 'Back', guests_path %>
+</div>

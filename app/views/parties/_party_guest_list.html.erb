@@ -5,9 +5,9 @@
   		<tr>
   			<th>Name</th>
   			<th>Email</th>
-  			<th>Status</th>
+			<th>Invite Sent</th>
   			<th># Expected</th>
-  			<th># Confimed</th>
+  			<th># RSVP</th>
 			<th>Actions</th>
   		</tr>
   	</thead>
@@ -16,10 +16,10 @@
     	<tr>
     		<td><%= link_to invite.guest.name , guest_path(invite.guest) %> </td>
     		<td><%= invite.guest.email %></td>
-    		<td><%= link_to "Pending", invitation_path(invite)      %> </td>
+			<td><%= date_str invite.created_at %></td>
     		<td><%= invite.expected_attendees %></td>
     		<td><%= invite.actual_attendees %>  </td>
-			<td><%= link_to 'Remove Invitation', invite, :confirm => 'Are you sure?', :method => :delete %></td>
+			<td><%= link_to 'Show Invitation', invite %></td>
     	</tr>
   		<% end%>
   	</tbody>

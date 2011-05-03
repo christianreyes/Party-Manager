@@ -9,17 +9,16 @@ namespace :db do
 	
 	puts "Destroyed all Location, Invitation, Guest, Party"
 	
-	t = Host.where(:username => "test").first
-	if t.nil? 
-		t = Host.new
-		t.first_name = "Party"
-		t.last_name = "Tester"
-		t.username = "test"
-		t.email = "test@test.com"
-		t.password = "test"
-		t.password_confirmation = "test"
-		t.save!
-	end
+	t = Host.where(:username => "MrsH").first
+	#if t.nil? 
+	#	t = Host.new
+	#	t.first_name = "Party"
+	#	t.last_name = "Tester"
+	#	t.username = "test"
+	#	t.email = "test@test.com"
+	#	t.password = "test"
+	#	t.save!
+	#end
     
     cmu = Location.new
     cmu.host_id = t.id
@@ -39,8 +38,9 @@ namespace :db do
 		p.start_time = Time.now
 		p.end_time = Time.now + 1.hour
 		p.rsvp_date = p.date - rand(30).days
-		p.description = Faker::Company.bs * 3
+		p.description = Faker::Lorem.paragraphs(3)
 		p.host_id = t.id
+		p.public_guestlist = rand > 0.5
 		p.save!
 		
 		n = (5 + rand(5))

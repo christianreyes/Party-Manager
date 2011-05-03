@@ -11,7 +11,6 @@ class InvitationTest < ActiveSupport::TestCase
   should validate_presence_of(:expected_attendees)
   
   should allow_value(2).for(:party_id)
-  should_not allow_value("a").for(:party_id)
   
   context "Creating two guests and inviting them to the party" do
     # create the objects I want with factories

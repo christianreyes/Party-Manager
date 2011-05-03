@@ -16,7 +16,7 @@
 		<td><%= guest.notes %></td>
 		<td><%= link_to 'Show', guest %></td>
 		<td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-		<td><%= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete, :class => "fade" %></td>
 	  </tr>
 	<% end %>
 	</table>
@@ -25,6 +25,6 @@
 	<p>You have no guests to display. Get started by creating some guests!</p>
 <% end %>
 
-<br />
-
+<div class="link_actions">
 <%= link_to 'New Guest', new_guest_path %>
+</div>

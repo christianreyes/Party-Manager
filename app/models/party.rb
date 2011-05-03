@@ -2,7 +2,7 @@ class Party < ActiveRecord::Base
 	belongs_to :host
 	belongs_to :location
 	belongs_to :party_type
-	has_many :invitations
+	has_many :invitations, :dependent => :destroy
 	has_many :guests, :through => :invitations
 	
 	scope :all, order(:name.asc)
@@ -12,14 +12,10 @@ class Party < ActiveRecord::Base
 	
 	#validates :date, :presence => true, :date => {:after => Proc.new { Date.yesterday } }
 	validates :name, :presence => true
-	validates :date, :presence => true
+	validates :date, :presence => true, :timeliness => { :type => :date}
+	validates :rsvp_date, :timeliness => { :allow_nil => true, :on_or_before => :date, :type => :date }
 	validates :start_time, :presence => true
-	validates :end_time, :presence => true
-	#validate :proper_time
-	
-	#def proper_time
-	#	errors.add(:end_time, " must be after start time") if end_time <= start_time
-	#end
+	validates :end_time, :presence => true, :timeliness => { :after => :start_time, :type => :time }
 	
 	def number_expected_guests
 		return self.guests.sum('expected_attendees')
