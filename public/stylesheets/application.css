@@ -50,6 +50,10 @@ a:hover {
   text-decoration: none;
 }
 
+#header_container a:hover {
+  text-decoration: underline;
+}
+
 #menu_container{
   background-image: url('../images/menu-gradient.png');
   background-repeat: repeat-x;
@@ -380,4 +384,9 @@ table.rsvp td{
 span.required {
 	color: red;
 	margin: 0 3px;
+}
+
+.clap {
+	margin: 0 auto;
+	display: block;
 }

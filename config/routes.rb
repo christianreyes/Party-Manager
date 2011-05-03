@@ -8,8 +8,6 @@ PartyManager::Application.routes.draw do
   match 'contact' => 'home#contact', :as => :contact
 
   match 'privacy' => 'home#privacy', :as => :privacy
-
-  match 'dashboard' => 'home#dashboard', :as => :dashboard
   
   match 'host/edit' => 'hosts#edit', :as => :edit_current_host
 
@@ -21,7 +19,7 @@ PartyManager::Application.routes.draw do
   
   match 'rsvp/:invite_code', :via => :get , :to => 'invitations#rsvp', :as => 'rsvp'
   
-  #match 'rsvp/:invite_code', :via => :post , :to => 'invitations#rsvp_create', :as => 'rsvp_create'
+  match 'thanks', :to => 'invitations#thanks', :as => 'thanks'
 
   resources :sessions
 

@@ -1,5 +1,5 @@
 class InvitationsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required,  :except => [:update, :rsvp, :thanks]
   # GET /invitations
   # GET /invitations.xml
   def index
@@ -32,8 +32,7 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(params[:invitation])
 	@parties = current_host.parties.all
-	@guests = current_host.guests.all
-
+	@guests = current_host.guests.all 
     respond_to do |format|
       if @invitation.save
 		PartyMailer.email_invitation(@invitation).deliver  
@@ -48,12 +47,16 @@ class InvitationsController < ApplicationController
   # PUT /invitations/1.xml
   def update
     @invitation = Invitation.find(params[:id])
-	@parties = current_host.parties.all
-	@guests = current_host.guests.all
+	@parties = current_host.parties.all  if logged_in?
+	@guests = current_host.guests.all if logged_in?
 	
     respond_to do |format|
       if @invitation.update_attributes(params[:invitation])
-        format.html { redirect_to(@invitation, :notice => 'Invitation was successfully updated.') }
+		if !@invitation.actual_attendees.nil? && (!logged_in? || @invitation.party.host_id != current_host.id)
+			format.html { redirect_to(thanks_path, :notice => 'RSVP has been successfully sent.') }
+		else
+			format.html { redirect_to(@invitation, :notice => 'Invitation was successfully updated.') }
+		end
       else
         format.html { render :action => "edit" }
       end

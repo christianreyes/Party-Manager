@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110503080822) do
     t.integer  "location_id"
     t.time     "start_time"
     t.time     "end_time"
+    t.boolean  "public_guestlist"
     t.text     "description"
     t.date     "rsvp_date"
     t.datetime "created_at"

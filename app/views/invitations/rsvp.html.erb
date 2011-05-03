@@ -29,4 +29,6 @@
 <% end %>
 
 <%= render :partial => 'parties/party_show', :locals => {:party => @invitation.party, :show_party_name => true} %>
+<% if @invitation.party.public_guestlist %>
 <%= render :partial => 'parties/party_guest_list', :locals => {:invitations => @invitation.party.invitations} %>
+<% end %>
