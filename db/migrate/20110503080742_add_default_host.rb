@@ -1,4 +1,4 @@
-class AddDefaultUser < ActiveRecord::Migration
+class AddDefaultHost < ActiveRecord::Migration
   def self.up	
 	a = Host.new(:username => "MrsH",
 				:email => "mrsheimann@gmail.com",
