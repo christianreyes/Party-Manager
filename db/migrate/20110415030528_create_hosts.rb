@@ -7,6 +7,7 @@ class CreateHosts < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
+	  t.boolean :administrator
       t.timestamps
     end
   end

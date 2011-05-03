@@ -18,11 +18,11 @@ require 'Time'
     p.name "Graduation Party"
     p.date 1.month.from_now
     p.rsvp_date 3.weeks.from_now
-   #s p.association :location
-   # p.association :party_type
-    p.start_time Time.parse("12:00:00")
+	p.association :location
+    p.association :party_type
+    p.start_time "12:00:00"
     p.description "A great and thrilling time will be had by all."
-    p.end_time (Time.parse("12:00:00") + 3.hours)
+	p.end_time {|a| a.start_time + 3.hours}
   end
 
 # Create factory for Guest class
@@ -39,7 +39,7 @@ require 'Time'
     i.association :guest
     i.invite_code nil
     i.expected_attendees 5
-    i.actual_attendees 5
+    i.actual_attendees 3
   end
 
 # Create factory for Location class
@@ -52,7 +52,7 @@ require 'Time'
   end
   
 # Create factory for PartyType class
- # Factory.define :party_type do |pt|
- #   pt.name "General Party"
- #   pt.active true
- # end
+  Factory.define :party_type do |pt|
+    pt.name "General Party"
+   # pt.active true
+ end

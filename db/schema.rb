@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110415051227) do
+ActiveRecord::Schema.define(:version => 20110503080822) do
 
   create_table "gifts", :force => true do |t|
     t.integer  "invitation_id"
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(:version => 20110415051227) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.boolean  "administrator"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "administrator"
   end
 
   create_table "invitations", :force => true do |t|
@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(:version => 20110415051227) do
     t.time     "end_time"
     t.text     "description"
     t.date     "rsvp_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "party_types", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
