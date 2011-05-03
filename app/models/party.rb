@@ -4,8 +4,6 @@ class Party < ActiveRecord::Base
 	has_many :invitations
 	has_many :guests, :through => :invitations
 	
-	accepts_nested_attributes_for :invitations
-	
 	scope :all, order(:name.asc)
     scope :upcoming, where(:date > Date.yesterday).order(:date.asc)
     scope :past,     where(:date <= Date.yesterday).order(:date.desc)

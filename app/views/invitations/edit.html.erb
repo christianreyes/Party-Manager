@@ -11,8 +11,8 @@
     <%= f.label :guest_id, 'Guest: <span class="required">*</span>'.html_safe %>
     <%= f.collection_select(:guest_id ,@guests,:id, :name,{:prompt =>"Select Guest"})%>
   </div>
-  <div class="field", 'Expected Attendees: <span class="required">*</span>'.html_safe>
-    <%= f.label :expected_attendees %>
+  <div class="field">
+	<%= f.label :expected_attendees, 'Expected Attendees: <span class="required">*</span>'.html_safe%>
     <%= f.text_field :expected_attendees %>
   </div>
   <div class="actions">

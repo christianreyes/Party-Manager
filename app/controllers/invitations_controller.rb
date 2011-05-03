@@ -48,7 +48,9 @@ class InvitationsController < ApplicationController
   # PUT /invitations/1.xml
   def update
     @invitation = Invitation.find(params[:id])
-
+	@parties = current_host.parties.all
+	@guests = current_host.guests.all
+	
     respond_to do |format|
       if @invitation.update_attributes(params[:invitation])
         format.html { redirect_to(@invitation, :notice => 'Invitation was successfully updated.') }

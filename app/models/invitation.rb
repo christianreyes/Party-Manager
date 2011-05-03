@@ -11,7 +11,7 @@ class Invitation < ActiveRecord::Base
     
 	validates :party_id, :presence => true
 	validates :guest_id, :presence => true
-	validates :expected_attendees, :presence => true
+	validates :expected_attendees, :presence => true, :numericality => { :integer_only => true, :greater_than => 0}
 	
     def invite_url
     	return "/rsvp/" + invite_code
