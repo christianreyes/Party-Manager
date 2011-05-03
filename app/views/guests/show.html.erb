@@ -1,14 +1,16 @@
-<h1 class="horizontal"><%= @guest.name %></h1>
+<h1 class="horizontal">Guest: <%= @guest.name %></h1>
 
 <p>
   <b>Email:</b>
   <%= @guest.email %>
 </p>
 
+<% if @guest.notes.nil? %>
 <p>
   <b>Notes:</b>
   <%= @guest.notes %>
 </p>
+<% end %>
 
 <h2 class="horizontal">Parties Attended</h2>
 <table class="minimal">

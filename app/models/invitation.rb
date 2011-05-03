@@ -12,7 +12,7 @@ class Invitation < ActiveRecord::Base
 	validates :expected_attendees, :presence => true, :numericality => { :integer_only => true, :greater_than => 0}
 	
     def invite_url
-    	return "local/rsvp/" + invite_code
+    	return "http://127.0.0.1:3000/rsvp/" + invite_code
     end
     
     private 

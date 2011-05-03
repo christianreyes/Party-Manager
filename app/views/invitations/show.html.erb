@@ -1,3 +1,5 @@
+<h1 class="horizontal">Invitation</h1>
+
 <p>
   <b>Party:</b>
   <%= @invitation.party.name %>
@@ -9,8 +11,8 @@
 </p>
 
 <p>
-  <b>Invite code:</b>
-  <%= @invitation.invite_code %>
+  <b>Invite url:</b>
+  <%= link_to @invitation.invite_url,  @invitation.invite_url %>
 </p>
 
 <p>
@@ -19,7 +21,7 @@
 </p>
 
 <p>
-  <b>Actual attendees:</b>
+  <b>RSVP'd attendees:</b>
   <%= @invitation.actual_attendees %>
 </p>
 
