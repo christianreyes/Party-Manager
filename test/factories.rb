@@ -10,6 +10,7 @@ require 'Time'
     h.email { |a| "#{a.first_name}.#{a.last_name}@example.com".downcase }
     h.password "fredbar"
     h.password_confirmation { |a| a.password }
+	h.administrator false
   end
   
 # Create factory for Party class

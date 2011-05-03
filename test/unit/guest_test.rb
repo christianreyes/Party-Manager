@@ -34,7 +34,7 @@ class GuestTest < ActiveSupport::TestCase
   
     # now run the tests:
     # test one of each type of factory (not really required, but not a bad idea)
-    should "show that cat, owner, pet is created properly" do
+	should "show that the contexts are creating properly" do
       assert_equal "Christian", @chris.first_name
       assert_equal "Puja", @puja.first_name
       assert_equal "Billy", @a.name

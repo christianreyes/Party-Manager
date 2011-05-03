@@ -9,7 +9,7 @@ class AddDefaultUser < ActiveRecord::Migration
 	a.save!
 				
 	puts "\n======================"
-	puts "Created default hos:"
+	puts "Created default host:"
 	puts "\nusername: MrsH"
 	puts "password: alex&mark\n"
 	puts "======================\n"
