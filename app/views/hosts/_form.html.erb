@@ -1,27 +1,27 @@
 <%= form_for @host do |f| %>
   <%= render :partial => "partials/errors", :locals => {:target => @host}  %>
   <div class="field">
-    <%= f.label :first_name %>
+	<%= f.label :first_name, 'First Name: <span class="required">*</span>'.html_safe%> 
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %>
+	<%= f.label :last_name, 'Last Name: <span class="required">*</span>'.html_safe%> 
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :username %>
+    <%= f.label :username, 'Username: <span class="required">*</span>'.html_safe%> 
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :email, "Email Address" %>
+	<%= f.label :email, 'Email: <span class="required">*</span>'.html_safe  %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, 'Password: <span class="required">*</span>'.html_safe%> 
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm Password" %>
+	<%= f.label :password_confirmation, 'Password Confirmation: <span class="required">*</span>'.html_safe%> 
     <%= f.password_field :password_confirmation %>
   </div>
   <p><%= f.submit (@host.new_record? ? "Sign up" : "Update") %></p>

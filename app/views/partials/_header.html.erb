@@ -6,7 +6,7 @@
 			<% if administrator?%>
 				Admin: 
 			<% end %>
-			<%= "#{current_host.name} | " %> 
+			<%= link_to current_host.name, edit_current_host_path(current_host) %> | 
 			<%= link_to "Log out", logout_path %> 
 		<% else %>
 			<%= link_to "Sign up", signup_path %> or

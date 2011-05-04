@@ -25,7 +25,13 @@ class Host < ActiveRecord::Base
   end
   
   def gifts
-    Host.joins(:parties)
+	coll = []
+	invitations.each do |i|
+		i.gifts.each do |g|
+			coll << g
+		end
+	end
+	coll
   end
   
   # login can be either username or email address

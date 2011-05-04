@@ -1,2 +1,18 @@
-Admin left
-Gifts
+Instructions for the grader:
+
+1. rake db:migrate
+
+This migrates the database and creates the default user:
+
+username: MrsH
+password: alex&mark
+
+You can make parties and guests and invitations.
+
+2. rake test:prepare
+
+3. rake test:units
+
+4. rake db:populate
+
+I wrote the populating script myself. It created 5 parties and guests and invites them.

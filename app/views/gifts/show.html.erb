@@ -1,6 +1,13 @@
+<h1 class="horizontal">Gift</h1>
+
 <p>
-  <b>Invitation:</b>
-  <%= @gift.invitation_id %>
+  <b>Party:</b>
+  <%= @gift.invitation.party.name %>
+</p>
+
+<p>
+  <b>Guest:</b>
+  <%= @gift.invitation.guest.name %>
 </p>
 
 <p>
@@ -10,9 +17,10 @@
 
 <p>
   <b>Note sent on:</b>
-  <%= @gift.note_sent_on %>
+  <%= date_str @gift.created_at %>
 </p>
 
-
+<div class="link_actions">
 <%= link_to 'Edit', edit_gift_path(@gift) %> |
 <%= link_to 'Back', gifts_path %>
+</div>

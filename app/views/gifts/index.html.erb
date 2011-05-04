@@ -1,27 +1,32 @@
-<h1>Listing gifts</h1>
+<% if @gifts.length > 0 %>
+	<h1 class="horizontal">Your Gifts</h1>
+	<table class="minimal">
+	  <tr>
+		<th>Party Name</th>
+		<th>Guest Name</th>
+		<th>Description</th>
+		<th>Note sent on</th>
+		<th colspan="3">Actions</th>
+	  </tr>
 
-<table>
-  <tr>
-    <th>Invitation</th>
-    <th>Description</th>
-    <th>Note sent on</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<% @gifts.each do |gift| %>
+	  <tr>
+		<td><%= gift.invitation.party.name %></td>
+		<td><%= gift.invitation.guest.name %></td>
+		<td><%= gift.description %></td>
+		<td><%= gift.note_sent_on %></td>
+		<td><%= link_to 'Show', gift %></td>
+		<td><%= link_to 'Edit', edit_gift_path(gift) %></td>
+		<td><%= link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
 
-<% @gifts.each do |gift| %>
-  <tr>
-    <td><%= gift.invitation_id %></td>
-    <td><%= gift.description %></td>
-    <td><%= gift.note_sent_on %></td>
-    <td><%= link_to 'Show', gift %></td>
-    <td><%= link_to 'Edit', edit_gift_path(gift) %></td>
-    <td><%= link_to 'Destroy', gift, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% else %>
+	<h2 class="horizontal">No Gifts to display</h2>
+	<p>You have no gifts to display. Get started by creating some gifts!</p>
 <% end %>
-</table>
 
-<br />
-
+<div class="link_actions">
 <%= link_to 'New Gift', new_gift_path %>
+</div>

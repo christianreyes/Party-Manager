@@ -23,4 +23,10 @@ class PartyMailer < ActionMailer::Base
     @invite = invite 
     mail(:to => invite.guest.email, :subject => "Party Updated")  
   end
+  
+  def gift_thank_you(gift)  
+	@gift = gift
+    @invite = gift.invitation
+	mail(:to => @invite.guest.email, :subject => "Thank you")  
+  end
 end

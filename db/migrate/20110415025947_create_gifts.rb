@@ -3,7 +3,6 @@ class CreateGifts < ActiveRecord::Migration
     create_table :gifts do |t|
       t.integer :invitation_id
       t.text :description
-      t.date :note_sent_on
 
       t.timestamps
     end

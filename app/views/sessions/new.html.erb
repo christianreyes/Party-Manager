@@ -1,14 +1,14 @@
-<% title "Log in" %>
+<h1 class="horizontal">Log in</h1>
 
 <div id="login">
 <p>Don't have an account? <%= link_to "Sign up!", signup_path %></p>
 <%= form_tag sessions_path do %>
   <p>
-	<b><%= label_tag :login, "Username or Email Address:" %></b><br/>
+	<b><%= label_tag :login, 'Username or Email Address: <span class="required">*</span>'.html_safe%></b>
 	<%= text_field_tag :login, params[:login] %>
   </p>
   <p>
-    <b><%= label_tag :password, "Password:" %></b><br/>
+    <b><%= label_tag :password, 'Password: <span class="required">*</span>'.html_safe%></b>
 	<%= password_field_tag :password %>
   </p>
   <p><%= submit_tag "Log in" %></p>
